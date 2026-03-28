@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>Java | NGC 2237&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            width: 100%;
+        }
+    </style>
+    
+    <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body, html {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .hero-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+</style>
+</head>
+<body style="background-color: #000000; margin: 0; padding: 0;">
+    
+  <header style="background: transparent; padding: 20px 0; position: absolute; top: 0; left: 0; right: 0; z-index: 100;">
+    <nav style="max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center;">
+        
+        <a href="https://LuoHuilin3055.github.io/myblog/" style="color: #00ffff; font-size: 1.5em; text-decoration: none; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+            NGC 2237&#39;s Blog
+        </a>
+        
+        <div style="display: flex; gap: 30px; align-items: center;">
+            
+            <a href="https://LuoHuilin3055.github.io/myblog/about/" style="color: white; text-decoration: none; font-size: 1.1em; transition: color 0.3s; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" 
+               onmouseover="this.style.color='#00ffff'" 
+               onmouseout="this.style.color='white'">
+                About
+            </a>
+            
+            <a href="https://LuoHuilin3055.github.io/myblog/posts/" style="color: white; text-decoration: none; font-size: 1.1em; transition: color 0.3s; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" 
+               onmouseover="this.style.color='#00ffff'" 
+               onmouseout="this.style.color='white'">
+                Articles
+            </a>
+            
+            <a href="https://LuoHuilin3055.github.io/myblog/contact/" style="color: white; text-decoration: none; font-size: 1.1em; transition: color 0.3s; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" 
+               onmouseover="this.style.color='#00ffff'" 
+               onmouseout="this.style.color='white'">
+                Contact
+            </a>
+            
+            
+            
+            <a href="https://LuoHuilin3055.github.io/myblog/tags" style="color: white; text-decoration: none; font-size: 1.1em; transition: color 0.3s; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" 
+               onmouseover="this.style.color='#00ffff'" 
+               onmouseout="this.style.color='white'">
+                Tags
+            </a>
+            
+            
+            <a href="https://LuoHuilin3055.github.io/myblog/categories" style="color: white; text-decoration: none; font-size: 1.1em; transition: color 0.3s; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" 
+               onmouseover="this.style.color='#00ffff'" 
+               onmouseout="this.style.color='white'">
+                Archive
+            </a>
+            
+            
+            <a href="https://LuoHuilin3055.github.io/myblog/logs" style="color: white; text-decoration: none; font-size: 1.1em; transition: color 0.3s; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" 
+               onmouseover="this.style.color='#00ffff'" 
+               onmouseout="this.style.color='white'">
+                Logs
+            </a>
+            
+            
+            <div style="position: relative;">
+                <input type="text" id="search-input" placeholder="搜索..." 
+                       style="
+                         background: rgba(0,0,0,0.7);
+                         border: 1px solid rgba(0,255,255,0.3);
+                         border-radius: 20px;
+                         padding: 6px 12px;
+                         color: #fff;
+                         font-size: 0.9em;
+                         backdrop-filter: blur(5px);
+                         transition: all 0.3s ease;
+                       " 
+                       onfocus="this.style.borderColor='#00ffff'; this.style.boxShadow='0 0 10px rgba(0,255,255,0.3)'; document.getElementById('search-results').style.display='block'"
+                       onblur="setTimeout(function() { document.getElementById('search-results').style.display='none'; }, 200)"
+                       onkeyup="performSearch(this.value)" />
+                <button style="
+                  position: absolute;
+                  right: 8px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  background: transparent;
+                  border: none;
+                  color: #00ffff;
+                  cursor: pointer;
+                  font-size: 1em;
+                " onclick="performSearch(document.getElementById('search-input').value)">🔍</button>
+                
+                
+                <div id="search-results" style="
+                  position: absolute;
+                  top: 100%;
+                  right: 0;
+                  width: 300px;
+                  max-height: 300px;
+                  background: rgba(0,0,0,0.9);
+                  border: 1px solid rgba(0,255,255,0.3);
+                  border-radius: 10px;
+                  padding: 10px;
+                  margin-top: 5px;
+                  display: none;
+                  overflow-y: auto;
+                  z-index: 1000;
+                  backdrop-filter: blur(10px);
+                "></div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script>
+  
+  const searchData = [
+    
+    {
+      title: "数据结构",
+      url: "https:\/\/LuoHuilin3055.github.io\/myblog\/posts\/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84\/",
+      content: " 定义： 在一些特定的、特殊的需求场景下，以往所学的数据类型无法基于需求合理地组织数据，此时就需要自己设计一套新的数据组织形式来解决问题，也就是数据结构 数据结构是一种存储、组织数据的方式，旨在便于访问和修改。没有一种单一的数据结构对所有用途均有效，所以需要知道几种数据结构的优势和局限 ",
+      date: "2026-03-28",
+      tags: [ "笔记",  "大一上",  "计算机", ]
+    },
+    
+    {
+      title: "计算机教育中缺失的一课",
+      url: "https:\/\/LuoHuilin3055.github.io\/myblog\/posts\/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%95%99%E8%82%B2%E4%B8%AD%E7%BC%BA%E5%A4%B1%E7%9A%84%E4%B8%80%E8%AF%BE\/",
+      content: " 指路：麻省理工学院【中英⚡计算机教育中缺失的一课|IAP 2026, Missing Semester】_哔哩哔哩_bilibili Shell入门 ",
+      date: "2026-03-25",
+      tags: [ "笔记",  "计算机", ]
+    },
+    
+    {
+      title: "前言",
+      url: "https:\/\/LuoHuilin3055.github.io\/myblog\/logs\/%E5%89%8D%E8%A8%80\/",
+      content: "请原谅我那贫瘠的语言系统与草履虫般的表达能力 为什么要创建这个分区 先说说为什么搞了这个博客 最开始想创建它是因为看见好朋友弄了一个，其实当时我也没有特别想做，我总觉得这种东西门槛很高、涉及复杂的界面与繁多的知识点、还要挤占我大量的游戏时间。但后面某一天我突然意识到，我不能再这样每天除了刷视频就是打游戏，大一上已经荒废了，下学期不能再重蹈覆辙。然后就鬼使神差地开始在CSDN搜索“如何创建一个自己的 …",
+      date: "2026-03-24",
+      tags: [ "日志", ]
+    },
+    
+    {
+      title: "第四周",
+      url: "https:\/\/LuoHuilin3055.github.io\/myblog\/logs\/%E5%A4%A7%E4%B8%80%E4%B8%8B\/%E7%AC%AC%E5%9B%9B%E5%91%A8\/",
+      content: "周二 2026-03-24 概率论作业（1.5h) 修改网站 周三 2026-03-25 一早上什么都没学😔，但是经历了走错教室、和鸣中奖，也还行 蓝桥杯学习——15：30~18：20（差不多） ",
+      date: "2026-03-24",
+      tags: [ "日志",  "大一上", ]
+    },
+    
+    {
+      title: "Java蓝桥杯备赛记录",
+      url: "https:\/\/LuoHuilin3055.github.io\/myblog\/posts\/java%E5%AD%A6%E4%B9%A0\/%E8%93%9D%E6%A1%A5%E6%9D%AF\/",
+      content: "题型结构 结果填空——2题，5分一题 程序设计——6题，10，10，15，15，20，20，共140 基础语法 运算符 1、算术运算符 public class ArithmeticOperators { public static void main(String[] args) { int a = 10; int b = 3; \/\/ 基本算术运算 System.out.println(a \u002b …",
+      date: "2026-03-23",
+      tags: [ "蓝桥杯", ]
+    },
+    
+    {
+      title: "About me",
+      url: "https:\/\/LuoHuilin3055.github.io\/myblog\/about\/",
+      content: "欢迎来到我的博客 嗯，自我介绍吗？ 中国传媒大学网络空间安全专业大一菜鸟一位 CTF只会简单的图形题 燕云王者 喜欢刘宇，最近也很喜欢四代 嗯好像没什么了呢 ",
+      date: "2026-03-22",
+      tags: [ "随笔", ]
+    },
+    
+    {
+      title: "第一篇文章",
+      url: "https:\/\/LuoHuilin3055.github.io\/myblog\/posts\/first-post\/",
+      content: "欢迎来到我的博客 这是我的第一篇博客文章！\n关于这个博客 我会在这里分享：\n学习笔记 技术心得 感谢你的关注！\n",
+      date: "2026-03-22",
+      tags: [ "随笔",  "博客", ]
+    },
+    
+    {
+      title: "Java题目记录",
+      url: "https:\/\/LuoHuilin3055.github.io\/myblog\/posts\/java%E5%AD%A6%E4%B9%A0\/%E9%A2%98%E7%9B%AE\/",
+      content: "流程控制 成绩等级判断 要求：输入一个百分制成绩（0-100），输出对应的等级\n90-100：A\n80-89：B 70-79：C\n60-69：D\n0-59：E\n其他：提示输入错误\nimport java.util.Scanner; public class Person { public static void main(String args[]) { int score; Scanner …",
+      date: "2026-03-21",
+      tags: [ "蓝桥杯",  "Java", ]
+    },
+    
+  ];
+  
+  function performSearch(query) {
+    const resultsContainer = document.getElementById('search-results');
+    
+    if (!query.trim()) {
+      resultsContainer.innerHTML = '';
+      return;
+    }
+    
+    
+    const results = searchData.filter(item => {
+      const searchTerm = query.toLowerCase();
+      return item.title.toLowerCase().includes(searchTerm) || 
+             item.content.toLowerCase().includes(searchTerm) ||
+             item.tags.some(tag => tag.toLowerCase().includes(searchTerm));
+    });
+    
+    
+    if (results.length > 0) {
+      resultsContainer.innerHTML = results.map(item => `
+        <a href="${item.url}" style="
+          display: block;
+          padding: 12px;
+          color: #fff;
+          text-decoration: none;
+          border-radius: 5px;
+          transition: all 0.3s ease;
+          margin-bottom: 8px;
+        " onmouseover="this.style.background='rgba(0,255,255,0.1)'; this.style.color='#00ffff'" onmouseout="this.style.background='none'; this.style.color='#fff'">
+          <div style="font-weight: bold; margin-bottom: 5px; font-size: 1em;">${item.title}</div>
+          <div style="font-size: 0.8em; color: #aaa; margin-bottom: 5px;">${item.date}</div>
+          ${item.tags.length > 0 ? `<div style="font-size: 0.7em; color: #00ffff; display: flex; flex-wrap: wrap; gap: 4px;">${item.tags.map(tag => `<span style="background: rgba(0,255,255,0.1); padding: 2px 8px; border-radius: 10px;">${tag}</span>`).join('')}</div>` : ''}
+        </a>
+      `).join('');
+    } else {
+      resultsContainer.innerHTML = `
+        <div style="padding: 20px; text-align: center; color: #aaa;">
+          没有找到相关内容
+        </div>
+      `;
+    }
+  }
+  
+  
+  document.addEventListener('click', function(e) {
+    const searchContainer = document.querySelector('div[style*="position: relative;"]');
+    const searchResults = document.getElementById('search-results');
+    
+    if (searchContainer && !searchContainer.contains(e.target)) {
+      searchResults.style.display = 'none';
+    }
+  });
+</script>
+
+    <main style="background-color: #000000;">
+        
+  
+  
+  <style>
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .timeline-container {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .timeline-header {
+      margin-bottom: 40px;
+      animation: fadeInDown 0.8s ease;
+    }
+    
+    .timeline-header h2 {
+      color: #00ffff;
+      font-size: 1.5em;
+      margin: 0 0 10px;
+    }
+    
+    .timeline-header span {
+      color: #888;
+      font-size: 0.9em;
+    }
+    
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #00ffff, transparent);
+    }
+    
+    .timeline-year {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    
+    .timeline-year::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 6px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #00ffff;
+      box-shadow: 0 0 10px rgba(0,255,255,0.5);
+    }
+    
+    .timeline-year h3 {
+      color: #00ffff;
+      font-size: 1.2em;
+      margin: 0 0 20px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 20px;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 8px;
+      border: 1px solid rgba(0,255,255,0.2);
+      transition: all 0.3s ease;
+      display: flex;
+      gap: 20px;
+    }
+    
+    .timeline-item:hover {
+      background: rgba(0,255,255,0.05);
+      transform: translateX(10px);
+      box-shadow: 0 4px 15px rgba(0,255,255,0.3);
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 28px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #00ffff;
+    }
+    
+    .timeline-item-image {
+      flex-shrink: 0;
+      width: 100px;
+      height: 60px;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    
+    .timeline-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .timeline-item:hover .timeline-item-image img {
+      transform: scale(1.1);
+    }
+    
+    .timeline-item-content {
+      flex: 1;
+    }
+    
+    .timeline-item-date {
+      color: #888;
+      font-size: 0.8em;
+      margin-bottom: 8px;
+    }
+    
+    .timeline-item-title {
+      color: #fff;
+      font-size: 1.1em;
+      margin: 0 0 10px;
+    }
+    
+    .timeline-item-title a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .timeline-item-title a:hover {
+      color: #00ffff;
+    }
+    
+    .timeline-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    
+    .timeline-tag {
+      font-size: 0.7em;
+      color: #00ffff;
+      background: rgba(0,255,255,0.1);
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+  </style>
+  
+  <div style="
+    background-image: url('https://LuoHuilin3055.github.io/myblog/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 120px 20px 60px;
+    position: relative;
+  " id="page-top">
+    
+    <div style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.85);
+      z-index: 0;
+    "></div>
+    
+    <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+      
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h1 style="
+          font-size: clamp(2.5em, 6vw, 3.5em);
+          color: #00ffff;
+          margin: 0;
+          text-shadow: 0 0 20px rgba(0,255,255,0.5);
+          letter-spacing: 2px;
+          animation: fadeInDown 0.8s ease;
+        ">Java</h1>
+        <div style="
+          width: 80px;
+          height: 3px;
+          background: linear-gradient(90deg, #00ffff, transparent);
+          margin: 20px auto 0;
+          animation: fadeInDown 0.8s ease 0.2s both;
+        "></div>
+      </div>
+      
+      
+      
+        
+        <div class="timeline-container">
+          
+          <div class="timeline-header">
+            <h2>全部文章 - 1</h2>
+            <span>按时间顺序排列</span>
+          </div>
+          
+          
+          <div class="timeline">
+            
+            
+            
+            
+              
+                <div class="timeline-year">
+                  <h3>2026</h3>
+                  
+                    <div class="timeline-item">
+                      
+                      <div class="timeline-item-image">
+                        <img src="https://LuoHuilin3055.github.io/myblog/images/44.jpg" alt="Java题目记录" loading="lazy" />
+                      </div>
+                      
+                      <div class="timeline-item-content">
+                        <div class="timeline-item-date">2026-03-21</div>
+                        <h4 class="timeline-item-title"><a href="https://LuoHuilin3055.github.io/myblog/posts/java%E5%AD%A6%E4%B9%A0/%E9%A2%98%E7%9B%AE/">Java题目记录</a></h4>
+                        
+                          <div class="timeline-tags">
+                            
+                              <span class="timeline-tag">蓝桥杯</span>
+                            
+                              <span class="timeline-tag">Java</span>
+                            
+                          </div>
+                        
+                      </div>
+                    </div>
+                  
+                </div>
+              
+            
+          </div>
+        </div>
+      
+      
+      
+      
+    </div>
+  </div>
+
+    </main>
+    
+  <footer style="background-color: #000; padding: 20px; position: relative; bottom: 0; width: 100%;" role="contentinfo">
+  <style>
+    .ananke-socials a {
+      color: #fff !important;
+    }
+    .ananke-socials a:hover {
+      color: #00ffff !important;
+    }
+  </style>
+  <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
+    <a href="https://LuoHuilin3055.github.io/myblog/" style="color: #fff; font-size: 1rem; text-decoration: none; padding: 10px 15px; transition: all 0.3s ease;" onmouseover="this.style.color='#00ffff'" onmouseout="this.style.color='#fff'">
+      &copy;  NGC 2237's Blog 2026 
+    </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+</body>
+</html>
