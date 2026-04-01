@@ -2171,6 +2171,10 @@
               link.classList.remove('active');
               if (link.getAttribute('href') === '#' + id) {
                 link.classList.add('active');
+                
+                const tocContainer = document.getElementById('toc-container');
+                const activeLink = link;
+                tocContainer.scrollTop = activeLink.offsetTop - tocContainer.offsetHeight / 2 + activeLink.offsetHeight / 2;
               }
             });
           }
