@@ -1225,7 +1225,22 @@
                 
                 const tocContainer = document.getElementById('toc-container');
                 const activeLink = link;
-                tocContainer.scrollTop = activeLink.offsetTop - tocContainer.offsetHeight / 2 + activeLink.offsetHeight / 2;
+                
+                
+                const linkRect = activeLink.getBoundingClientRect();
+                const containerRect = tocContainer.getBoundingClientRect();
+                
+                
+                if (linkRect.top < containerRect.top || linkRect.bottom > containerRect.bottom) {
+                  
+                  const scrollPosition = activeLink.offsetTop - tocContainer.offsetHeight / 2 + activeLink.offsetHeight / 2;
+                  
+                  
+                  tocContainer.scrollTo({
+                    top: scrollPosition,
+                    behavior: 'smooth'
+                  });
+                }
               }
             });
           }
