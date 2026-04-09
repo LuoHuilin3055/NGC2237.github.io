@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
+	<meta name="generator" content="Hugo 0.158.0">
     <meta charset="utf-8">
-    <title>博客 | NGC 2237&#39;s Blog</title>
+    <title>NGC 2237&#39;s Blog | NGC 2237&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body, html {
@@ -322,258 +323,314 @@
     <main style="background-color: #000000;">
         
   
-  
-  <style>
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .timeline-container {
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-    }
-    
-    .timeline-header {
-      margin-bottom: 40px;
-      animation: fadeInDown 0.8s ease;
-    }
-    
-    .timeline-header h2 {
-      color: #00ffff;
-      font-size: 1.5em;
-      margin: 0 0 10px;
-    }
-    
-    .timeline-header span {
-      color: #888;
-      font-size: 0.9em;
-    }
-    
-    .timeline {
-      position: relative;
-      padding-left: 30px;
-    }
-    
-    .timeline::before {
-      content: '';
-      position: absolute;
-      left: 10px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, #00ffff, transparent);
-    }
-    
-    .timeline-year {
-      position: relative;
-      margin-bottom: 30px;
-    }
-    
-    .timeline-year::before {
-      content: '';
-      position: absolute;
-      left: -30px;
-      top: 6px;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      background: #00ffff;
-      box-shadow: 0 0 10px rgba(0,255,255,0.5);
-    }
-    
-    .timeline-year h3 {
-      color: #00ffff;
-      font-size: 1.2em;
-      margin: 0 0 20px;
-    }
-    
-    .timeline-item {
-      position: relative;
-      margin-bottom: 20px;
-      padding: 20px;
-      background: rgba(0,0,0,0.6);
-      border-radius: 8px;
-      border: 1px solid rgba(0,255,255,0.2);
-      transition: all 0.3s ease;
-      display: flex;
-      gap: 20px;
-    }
-    
-    .timeline-item:hover {
-      background: rgba(0,255,255,0.05);
-      transform: translateX(10px);
-      box-shadow: 0 4px 15px rgba(0,255,255,0.3);
-    }
-    
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -36px;
-      top: 28px;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #fff;
-      border: 2px solid #00ffff;
-    }
-    
-    .timeline-item-image {
-      flex-shrink: 0;
-      width: 100px;
-      height: 60px;
-      border-radius: 6px;
-      overflow: hidden;
-    }
-    
-    .timeline-item-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    
-    .timeline-item:hover .timeline-item-image img {
-      transform: scale(1.1);
-    }
-    
-    .timeline-item-content {
-      flex: 1;
-    }
-    
-    .timeline-item-date {
-      color: #888;
-      font-size: 0.8em;
-      margin-bottom: 8px;
-    }
-    
-    .timeline-item-title {
-      color: #fff;
-      font-size: 1.1em;
-      margin: 0 0 10px;
-    }
-    
-    .timeline-item-title a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    
-    .timeline-item-title a:hover {
-      color: #00ffff;
-    }
-    
-    .timeline-tags {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-    }
-    
-    .timeline-tag {
-      font-size: 0.7em;
-      color: #00ffff;
-      background: rgba(0,255,255,0.1);
-      padding: 2px 8px;
-      border-radius: 10px;
-    }
-  </style>
+
+
+
+
+<div style="
+  position: relative;
+  height: 900px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  left: 0;
+  right: 0;
+  overflow: hidden;
+">
   
   <div style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url('https://LuoHuilin3055.github.io/myblog/images/background.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    min-height: 100vh;
-    padding: 120px 20px 60px;
-    position: relative;
-  " id="page-top">
+    transform: scale(1.1);
+    transition: transform 0.8s ease;
+  " id="hero-bg"></div>
+  
+  
+  <div style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(0,0,0,0.4) 0%,
+      rgba(0,0,0,0.2) 50%,
+      rgba(0,0,0,0.5) 100%
+    );
+  "></div>
+  
+  
+  <div style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  ">
+    <h1 style="
+      color: white;
+      font-size: clamp(2.5em, 8vw, 5em);
+      margin: 0;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+      font-weight: bold;
+      animation: fadeInUp 1s ease;
+    ">NGC 2237</h1>
+    
+    
+    <p style="
+      color: white;
+      font-size: clamp(1.2em, 4vw, 2.2em);
+      margin: 20px 0 0;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+      animation: fadeInUp 1s ease 0.3s both;
+      text-align: center;
+      max-width: 800px;
+      padding: 0 20px;
+    ">欢迎来到NGC_2237的博客</p>
+    
+    
     
     <div style="
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.85);
-      z-index: 0;
-    "></div>
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+      cursor: pointer;
+    " onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="opacity: 0.8;">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-5px);
+    }
+  }
+</style>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const heroBg = document.getElementById('hero-bg');
+    if (heroBg) {
+      window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * 0.3;
+        heroBg.style.transform = 'scale(1.1) translateY(' + rate + 'px)';
+      });
+    }
+  });
+</script>
+
+
+  
+  <div style="
+    text-align: center;
+    font-size: 2.2em;
+    color: #00ffff;
+    margin: 60px auto 40px;
+    max-width: 900px;
+    padding: 0 30px 35px;
+    font-style: italic;
+    line-height: 1.6;
+    border-bottom: 3px solid #00ffff;
+    width: 80%;
+  ">
+    "何时葡萄会熟透，你要静候再静候"
+  </div>
+  
+
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px 60px; background-color: #000000;">
+    <h2 style="font-size: 2em; color: #00ffff; margin-bottom: 30px;">📝 最新文章</h2>
     
-    <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
+    <div style="display: flex; flex-wrap: wrap; gap: 30px; justify-content: center;">
       
-      <div style="text-align: center; margin-bottom: 60px;">
-        <h1 style="
-          font-size: clamp(2.5em, 6vw, 3.5em);
-          color: #00ffff;
-          margin: 0;
-          text-shadow: 0 0 20px rgba(0,255,255,0.5);
-          letter-spacing: 2px;
-          animation: fadeInDown 0.8s ease;
-        ">博客</h1>
-        <div style="
-          width: 80px;
-          height: 3px;
-          background: linear-gradient(90deg, #00ffff, transparent);
-          margin: 20px auto 0;
-          animation: fadeInDown 0.8s ease 0.2s both;
-        "></div>
+      
+      <div style="
+        width: 320px;
+        background: #111;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,255,255,0.2);
+        padding: 25px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #333;
+      " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,255,255,0.4)'; this.style.border='1px solid #00ffff';"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,255,255,0.2)'; this.style.border='1px solid #333';">
+        <h2 style="font-size: 1.5em; margin: 0 0 10px;">
+          <a href="https://LuoHuilin3055.github.io/myblog/posts/%E5%87%BA%E6%B8%B8/" style="color: #fff; text-decoration: none;"></a>
+        </h2>
+        <div style="color: #888; font-size: 0.85em; margin-bottom: 15px;">
+          0001-01-01 | 1 分钟
+        </div>
+        <div style="color: #ccc; line-height: 1.6; margin-bottom: 20px;">
+           日期 白天 晚上 住宿 4.25 — 晚到上海浦东国际机场 → 打车去苏州 苏州 4.26 拙政园 + 平江路历史街区 山塘街夜游 苏州 4.27 苏州博物馆 金鸡湖夜景 苏州 4.28 下午去周庄 …
+        </div>
+        
+        
+        
+
+        
+        <a href="https://LuoHuilin3055.github.io/myblog/posts/%E5%87%BA%E6%B8%B8/" style="
+          display: inline-block;
+          background: #00ffff;
+          color: #000;
+          padding: 8px 20px;
+          border-radius: 25px;
+          text-decoration: none;
+          font-weight: bold;
+          margin-top: 15px;
+        ">阅读全文 →</a>
       </div>
       
-      
-      
-        
-        <div class="timeline-container">
-          
-          <div class="timeline-header">
-            <h2>全部文章 - 1</h2>
-            <span>按时间顺序排列</span>
-          </div>
-          
-          
-          <div class="timeline">
-            
-            
-            
-            
-              
-                <div class="timeline-year">
-                  <h3>2026</h3>
-                  
-                    <div class="timeline-item">
-                      
-                      <div class="timeline-item-image">
-                        <img src="https://LuoHuilin3055.github.io/myblog/images/background.jpg" alt="第一篇文章" loading="lazy" />
-                      </div>
-                      
-                      <div class="timeline-item-content">
-                        <div class="timeline-item-date">2026-03-22</div>
-                        <h4 class="timeline-item-title"><a href="https://LuoHuilin3055.github.io/myblog/posts/first-post/">第一篇文章</a></h4>
-                        
-                          <div class="timeline-tags">
-                            
-                              <span class="timeline-tag">随笔</span>
-                            
-                              <span class="timeline-tag">博客</span>
-                            
-                          </div>
-                        
-                      </div>
-                    </div>
-                  
-                </div>
-              
-            
-          </div>
+      <div style="
+        width: 320px;
+        background: #111;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,255,255,0.2);
+        padding: 25px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #333;
+      " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,255,255,0.4)'; this.style.border='1px solid #00ffff';"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,255,255,0.2)'; this.style.border='1px solid #333';">
+        <h2 style="font-size: 1.5em; margin: 0 0 10px;">
+          <a href="https://LuoHuilin3055.github.io/myblog/posts/%E6%9C%AA%E5%91%BD%E5%90%8D/" style="color: #fff; text-decoration: none;"></a>
+        </h2>
+        <div style="color: #888; font-size: 0.85em; margin-bottom: 15px;">
+          0001-01-01 | 3 分钟
         </div>
+        <div style="color: #ccc; line-height: 1.6; margin-bottom: 20px;">
+          很好，这一步很关键 👍
+我帮你做一版**“刚刚好、不累赘”的打包清单（适合你这条路线）**👇
+🎒 一、行李总原则 👉 一个20寸登机箱 + 一个背包
+✔ 轻装（每天换城市）
+✔ 不拖累
+✔ 坐车方便 …
+        </div>
+        
+        
+        
+
+        
+        <a href="https://LuoHuilin3055.github.io/myblog/posts/%E6%9C%AA%E5%91%BD%E5%90%8D/" style="
+          display: inline-block;
+          background: #00ffff;
+          color: #000;
+          padding: 8px 20px;
+          border-radius: 25px;
+          text-decoration: none;
+          font-weight: bold;
+          margin-top: 15px;
+        ">阅读全文 →</a>
+      </div>
       
+      <div style="
+        width: 320px;
+        background: #111;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,255,255,0.2);
+        padding: 25px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #333;
+      " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,255,255,0.4)'; this.style.border='1px solid #00ffff';"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,255,255,0.2)'; this.style.border='1px solid #333';">
+        <h2 style="font-size: 1.5em; margin: 0 0 10px;">
+          <a href="https://LuoHuilin3055.github.io/myblog/posts/%E7%BD%91%E5%AE%89%E5%AF%BC%E8%AE%BA/" style="color: #fff; text-decoration: none;"></a>
+        </h2>
+        <div style="color: #888; font-size: 0.85em; margin-bottom: 15px;">
+          0001-01-01 | 2 分钟
+        </div>
+        <div style="color: #ccc; line-height: 1.6; margin-bottom: 20px;">
+          好，这里给你一份真正能应付期末的压缩版：《网络安全导论·密码学期末必背》🔥 （按“能直接默写/做题”的标准整理）
+📘 一、密码学总基础（必背） 1. 密码学定义 研究信息加密与破解的学科
+两部分：
+密 …
+        </div>
+        
+        
+        
+
+        
+        <a href="https://LuoHuilin3055.github.io/myblog/posts/%E7%BD%91%E5%AE%89%E5%AF%BC%E8%AE%BA/" style="
+          display: inline-block;
+          background: #00ffff;
+          color: #000;
+          padding: 8px 20px;
+          border-radius: 25px;
+          text-decoration: none;
+          font-weight: bold;
+          margin-top: 15px;
+        ">阅读全文 →</a>
+      </div>
       
-      
+      <div style="
+        width: 320px;
+        background: #111;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,255,255,0.2);
+        padding: 25px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #333;
+      " onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,255,255,0.4)'; this.style.border='1px solid #00ffff';"
+         onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,255,255,0.2)'; this.style.border='1px solid #333';">
+        <h2 style="font-size: 1.5em; margin: 0 0 10px;">
+          <a href="https://LuoHuilin3055.github.io/myblog/posts/%E8%84%9A%E6%9C%AC/" style="color: #fff; text-decoration: none;"></a>
+        </h2>
+        <div style="color: #888; font-size: 0.85em; margin-bottom: 15px;">
+          0001-01-01 | 1 分钟
+        </div>
+        <div style="color: #ccc; line-height: 1.6; margin-bottom: 20px;">
+          修改GIF宽高 from PIL import Image img = Image.open(&#34;input.gif&#34;) img = img.resize((400, 600)) …
+        </div>
+        
+        
+        
+
+        
+        <a href="https://LuoHuilin3055.github.io/myblog/posts/%E8%84%9A%E6%9C%AC/" style="
+          display: inline-block;
+          background: #00ffff;
+          color: #000;
+          padding: 8px 20px;
+          border-radius: 25px;
+          text-decoration: none;
+          font-weight: bold;
+          margin-top: 15px;
+        ">阅读全文 →</a>
+      </div>
       
     </div>
   </div>

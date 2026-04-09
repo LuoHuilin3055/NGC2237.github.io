@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>虚拟机 on NGC 2237&#39;s Blog</title>
+    <link>https://LuoHuilin3055.github.io/myblog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+    <description>Recent content in 虚拟机 on NGC 2237&#39;s Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 08 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://LuoHuilin3055.github.io/myblog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>虚拟机配置</title>
+      <link>https://LuoHuilin3055.github.io/myblog/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://LuoHuilin3055.github.io/myblog/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;h1 id=&#34;准备&#34;&gt;准备&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;VMware Workstation Pro&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;Ubuntu&lt;/code&gt;的&lt;code&gt;iso&lt;/code&gt;文件——&lt;a href=&#34;https://releases.ubuntu.com/jammy/&#34;&gt;Ubuntu 22.04.5 LTS (Jammy Jellyfish)&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;Windows10&lt;/code&gt;的&lt;code&gt;iso&lt;/code&gt;文件——&lt;a href=&#34;https://www.microsoft.com/zh-cn/software-download/windows10&#34;&gt;下载 Windows 10&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;安装ubuntu&#34;&gt;安装Ubuntu&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;打开&lt;code&gt;VMware&lt;/code&gt;，选择&lt;code&gt;&amp;quot;Create a New Virtual Machine&amp;quot;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;选择&lt;code&gt;&amp;quot;Typical&amp;quot;&lt;/code&gt;安装 -&amp;gt; &lt;code&gt;next&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;在&lt;code&gt;&amp;quot;Installer disc image file(iso):&amp;quot;&lt;/code&gt;处选择下载好的&lt;code&gt;iso&lt;/code&gt;文件 -&amp;gt; &lt;code&gt;next &lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;设置账号以及硬件配置等基本操作&lt;/li&gt;&#xA;&lt;li&gt;开机后进入安装界面&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;Installl Ubuntu&lt;/code&gt; -&amp;gt; 语言：&lt;code&gt;English&lt;/code&gt; ，键盘：&lt;code&gt;English&lt;/code&gt; -&amp;gt; &lt;code&gt;Minimal installaation&lt;/code&gt;并勾选：&#xA;&lt;ul&gt;&#xA;&lt;li&gt;✔ Download updates while installing&lt;/li&gt;&#xA;&lt;li&gt;✔ Install third-party software&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;安装类型为：&lt;code&gt;Erase disk and install Ubuntu&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;h2 id=&#34;配置代理&#34;&gt;配置代理&lt;/h2&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;settings&lt;/code&gt; -&amp;gt; &lt;code&gt;Network&lt;/code&gt; -&amp;gt; &lt;code&gt;Network Proxy&lt;/code&gt; -&amp;gt; &lt;code&gt;Manual&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;安装windows10&#34;&gt;安装&lt;code&gt;Windows10&lt;/code&gt;&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;打开&lt;code&gt;VMware&lt;/code&gt;，选择&lt;code&gt;&amp;quot;Create a New Virtual Machine&amp;quot;&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;选择&lt;code&gt;&amp;quot;Typical&amp;quot;&lt;/code&gt;安装 -&amp;gt; &lt;code&gt;next&lt;/code&gt;  -&amp;gt; 选择下载好的&lt;code&gt;iso&lt;/code&gt;文件&lt;/li&gt;&#xA;&lt;li&gt;设置账号以及硬件配置等基本操作&lt;/li&gt;&#xA;&lt;li&gt;开机后进入安装界面&lt;/li&gt;&#xA;&lt;li&gt;配置代理同上&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

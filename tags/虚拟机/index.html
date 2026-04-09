@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title>前言 | NGC 2237&#39;s Blog</title>
+    <title>虚拟机 | NGC 2237&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body, html {
@@ -335,206 +335,158 @@
       }
     }
     
-    .article-container {
-      max-width: 1400px;
+    .timeline-container {
+      max-width: 800px;
       margin: 0 auto;
-      display: flex;
-      gap: 40px;
       position: relative;
-      z-index: 1;
     }
     
-    .article-content-wrapper {
-      flex: 1;
-      background: rgba(0,0,0,0.7);
-      border-radius: 16px;
-      padding: 40px;
-      border: 1px solid rgba(0,255,255,0.2);
+    .timeline-header {
+      margin-bottom: 40px;
       animation: fadeInDown 0.8s ease;
     }
     
-    .article-header {
-      margin-bottom: 40px;
-      text-align: center;
-    }
-    
-    .article-title {
+    .timeline-header h2 {
       color: #00ffff;
-      font-size: 2.5em;
-      margin: 0 0 20px;
-      text-shadow: 0 0 20px rgba(0,255,255,0.5);
+      font-size: 1.5em;
+      margin: 0 0 10px;
     }
     
-    .article-meta {
+    .timeline-header span {
       color: #888;
       font-size: 0.9em;
+    }
+    
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #00ffff, transparent);
+    }
+    
+    .timeline-year {
+      position: relative;
       margin-bottom: 30px;
     }
     
-    .article-meta span {
-      margin: 0 10px;
+    .timeline-year::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 6px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #00ffff;
+      box-shadow: 0 0 10px rgba(0,255,255,0.5);
     }
     
-    .article-content {
-      color: #fff;
-      line-height: 2.2;
-    }
-    
-    .article-content p {
-      margin-bottom: 25px;
-      text-indent: 2em;
-    }
-    
-    .article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6 {
+    .timeline-year h3 {
       color: #00ffff;
-      margin: 40px 0 25px;
-      line-height: 1.6;
+      font-size: 1.2em;
+      margin: 0 0 20px;
     }
     
-    .article-content ul, .article-content ol {
-      margin: 25px 0;
-      padding-left: 2em;
-      line-height: 2.2;
-    }
-    
-    .article-content li {
-      margin-bottom: 12px;
-    }
-    
-    .article-content ul li {
-      list-style-type: disc;
-    }
-    
-    .article-content ol li {
-      list-style-type: decimal;
-    }
-    
-    .article-content blockquote {
-      border-left: 4px solid #00ffff;
-      padding-left: 20px;
-      margin: 25px 0;
-      color: #aaa;
-      font-style: italic;
-      line-height: 2;
-    }
-    
-    .article-content pre {
-      background: rgba(0,0,0,0.8);
-      border: 1px solid rgba(0,255,255,0.3);
-      border-radius: 8px;
+    .timeline-item {
+      position: relative;
+      margin-bottom: 20px;
       padding: 20px;
-      margin: 25px 0;
-      overflow-x: auto;
-      line-height: 1.8;
-    }
-    
-    .article-content code {
-      background: rgba(0,255,255,0.1);
-      color: #00ffff;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: 'Courier New', monospace;
-      font-size: 0.9em;
-    }
-    
-    .article-content pre code {
-      background: none;
-      padding: 0;
-      color: #fff;
-    }
-    
-    .article-content hr {
-      border: none;
-      border-top: 1px solid rgba(0,255,255,0.3);
-      margin: 40px 0;
-    }
-    
-    .article-content table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 25px 0;
-    }
-    
-    .article-content th, .article-content td {
-      border: 1px solid rgba(0,255,255,0.3);
-      padding: 12px;
-      text-align: left;
-      color: #fff;
-    }
-    
-    .article-content th {
-      background: rgba(0,255,255,0.1);
-      color: #00ffff;
-    }
-    
-    .article-content img {
-      max-width: 100%;
-      height: auto;
+      background: rgba(0,0,0,0.6);
       border-radius: 8px;
-      margin: 25px 0;
+      border: 1px solid rgba(0,255,255,0.2);
+      transition: all 0.3s ease;
+      display: flex;
+      gap: 20px;
     }
     
-    .article-content strong {
-      color: #00ffff;
-      font-weight: bold;
+    .timeline-item:hover {
+      background: rgba(0,255,255,0.05);
+      transform: translateX(10px);
+      box-shadow: 0 4px 15px rgba(0,255,255,0.3);
     }
     
-    .article-content em {
-      color: #aaa;
-      font-style: italic;
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 28px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #00ffff;
     }
     
-    .article-content a {
-      color: #00ffff;
+    .timeline-item-image {
+      flex-shrink: 0;
+      width: 100px;
+      height: 60px;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    
+    .timeline-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .timeline-item:hover .timeline-item-image img {
+      transform: scale(1.1);
+    }
+    
+    .timeline-item-content {
+      flex: 1;
+    }
+    
+    .timeline-item-date {
+      color: #888;
+      font-size: 0.8em;
+      margin-bottom: 8px;
+    }
+    
+    .timeline-item-title {
+      color: #fff;
+      font-size: 1.1em;
+      margin: 0 0 10px;
+    }
+    
+    .timeline-item-title a {
+      color: #fff;
       text-decoration: none;
       transition: color 0.3s ease;
     }
     
-    .article-content a:hover {
-      text-decoration: underline;
+    .timeline-item-title a:hover {
+      color: #00ffff;
     }
     
-    .article-tags {
-      margin-top: 40px;
+    .timeline-tags {
       display: flex;
-      gap: 10px;
+      gap: 6px;
       flex-wrap: wrap;
     }
     
-    .article-tag {
-      font-size: 0.8em;
+    .timeline-tag {
+      font-size: 0.7em;
       color: #00ffff;
       background: rgba(0,255,255,0.1);
-      padding: 5px 15px;
-      border-radius: 20px;
-    }
-    
-    .toc-sidebar {
-      flex-shrink: 0;
-      width: 300px;
-    }
-    
-    @media (max-width: 1024px) {
-      .article-container {
-        flex-direction: column;
-      }
-      
-      .toc-sidebar {
-        width: 100%;
-      }
-      
-      .article-content-wrapper {
-        order: 2;
-      }
-      
-      .toc-sidebar {
-        order: 1;
-      }
+      padding: 2px 8px;
+      border-radius: 10px;
     }
   </style>
   
   <div style="
-    background-image: url('https://LuoHuilin3055.github.io/myblog/images/learning.jpg');
+    background-image: url('https://LuoHuilin3055.github.io/myblog/images/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -553,424 +505,76 @@
       z-index: 0;
     "></div>
     
-    <div class="article-container">
+    <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
       
-      <div class="article-content-wrapper">
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h1 style="
+          font-size: clamp(2.5em, 6vw, 3.5em);
+          color: #00ffff;
+          margin: 0;
+          text-shadow: 0 0 20px rgba(0,255,255,0.5);
+          letter-spacing: 2px;
+          animation: fadeInDown 0.8s ease;
+        ">虚拟机</h1>
+        <div style="
+          width: 80px;
+          height: 3px;
+          background: linear-gradient(90deg, #00ffff, transparent);
+          margin: 20px auto 0;
+          animation: fadeInDown 0.8s ease 0.2s both;
+        "></div>
+      </div>
+      
+      
+      
         
-        <div class="article-header">
-          <h1 class="article-title">前言</h1>
-          <div class="article-meta">
-            <span>📅 2026-03-24</span>
+        <div class="timeline-container">
+          
+          <div class="timeline-header">
+            <h2>全部文章 - 1</h2>
+            <span>按时间顺序排列</span>
+          </div>
+          
+          
+          <div class="timeline">
+            
+            
+            
+            
+              
+                <div class="timeline-year">
+                  <h3>2026</h3>
+                  
+                    <div class="timeline-item">
+                      
+                      <div class="timeline-item-image">
+                        <img src="https://LuoHuilin3055.github.io/myblog/images/7.jpg" alt="虚拟机配置" loading="lazy" />
+                      </div>
+                      
+                      <div class="timeline-item-content">
+                        <div class="timeline-item-date">2026-04-08</div>
+                        <h4 class="timeline-item-title"><a href="https://LuoHuilin3055.github.io/myblog/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE/">虚拟机配置</a></h4>
+                        
+                          <div class="timeline-tags">
+                            
+                              <span class="timeline-tag">虚拟机</span>
+                            
+                              <span class="timeline-tag">计算机</span>
+                            
+                          </div>
+                        
+                      </div>
+                    </div>
+                  
+                </div>
+              
             
           </div>
         </div>
-        
-        
-        <div class="article-content">
-          <h2 id="请原谅我那贫瘠的语言系统与草履虫般的表达能力"><strong>请原谅我那贫瘠的语言系统与草履虫般的表达能力</strong></h2>
-<h1 id="为什么要创建这个分区">为什么要创建这个分区</h1>
-<ul>
-<li>先说说为什么搞了这个博客
-<ul>
-<li>最开始想创建它是因为看见好朋友弄了一个，其实当时我也没有特别想做，我总觉得这种东西门槛很高、涉及复杂的界面与繁多的知识点、还要挤占我大量的游戏时间。但后面某一天我突然意识到，我不能再这样每天除了刷视频就是打游戏，大一上已经荒废了，下学期不能再重蹈覆辙。然后就鬼使神差地开始在<code>CSDN</code>搜索“如何创建一个自己的博客”，又去问<code>DeepSeek</code>，花了两个下半天终于把网站给部署出来。</li>
-<li>网站部署成功后，我又想着，弄了这么久总不能就让它空着吧，刚好这段时间我在准备蓝桥杯（为什么是这段时间呢，因为我上学期和寒假都在打游戏），我就把准备的蓝桥杯的两篇文章传上来了</li>
-<li><strong>上面两段好像讲了一堆废话，请原谅我现在比草履虫还差的表达能力。</strong> 总结一下，这个博客最初是跟风之作，现在意外成为一个激励我学习、摆脱游戏的动力</li>
-</ul>
-</li>
-<li>现在讲讲这个分区
-<ul>
-<li>高中的时候我有一个本子，上面记录每天的作业、待办事项、一些很有趣的小事还有一些很喜欢的句子，刚上大学我也准备了一个，但可能是因为之前没怎么用过手机，我对电子产品的依赖性特别高，游戏瘾也很大，每天不是刷视频就是打游戏，久而久之本子就被遗忘了。每次试图捡起来但是也坚持不了许久。</li>
-<li>现在建立这个分区，一是我又想重新记录一下我每天的生活，不至于每天浑浑噩噩，不知道干了些什么、学了些什么；同时也督促我学习（因为这样才有东西可以写）与重新锻炼我的表达能力（<strong>有点好笑的是，在高中语文是强项，现在写一篇随笔都断断续续、没有逻辑</strong>）</li>
-</ul>
-</li>
-</ul>
-
-          
-          
-          
-            <div class="article-tags">
-              
-                <span class="article-tag">日志</span>
-              
-            </div>
-          
-        </div>
-      </div>
       
       
-      <div class="toc-sidebar">
-        
-<div style="
-  position: fixed;
-  right: 30px;
-  top: 100px;
-  height: fit-content;
-  min-height: 300px;
-  background: rgba(0,0,0,0.9);
-  border-radius: 12px;
-  padding: 20px;
-  border: 1px solid rgba(0,255,255,0.3);
-  max-height: 85vh;
-  overflow-y: auto;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  min-width: 320px;
-  width: 350px;
-" id="toc-container">
-  <div style="
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(0,255,255,0.2);
-  ">
-    <h3 style="color: #00ffff; margin: 0; font-size: 1.1em; display: flex; align-items: center; gap: 8px;">
-      <span style="font-size: 1.2em;">📋</span>
-      <span>目录</span>
-    </h3>
-    <button 
-      onclick="toggleTOC()"
-      style="
-        background: linear-gradient(135deg, rgba(0,255,255,0.1), rgba(0,255,255,0.05));
-        border: 1px solid rgba(0,255,255,0.4);
-        color: #00ffff;
-        padding: 6px 12px;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 0.85em;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 8px rgba(0,255,255,0.1);
-        backdrop-filter: blur(5px);
-        position: relative;
-        overflow: hidden;
-      "
-      onmouseover="this.style.background='linear-gradient(135deg, rgba(0,255,255,0.2), rgba(0,255,255,0.1))'; this.style.borderColor='#00ffff'; this.style.boxShadow='0 4px 12px rgba(0,255,255,0.3)'; this.style.transform='translateY(-2px)'
-      onmouseout="this.style.background='linear-gradient(135deg, rgba(0,255,255,0.1), rgba(0,255,255,0.05))'; this.style.borderColor='rgba(0,255,255,0.4)'; this.style.boxShadow='0 2px 8px rgba(0,255,255,0.1)'; this.style.transform='translateY(0)'
-    >
-      <span style="display: flex; align-items: center; gap: 6px;">
-        <span style="font-size: 1.1em;">📋</span>
-        <span id="toc-toggle-text">收起</span>
-      </span>
-    </button>
-  </div>
-  
-  <div class="enhanced-toc" style="
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-    max-height: 1000px;
-    opacity: 1;
-    overflow: visible;
-  " id="toc-content">
-    
-    <ul>
-      <li>
-        <a href="#" style="
-          color: #00ffff;
-          font-weight: bold;
-          text-decoration: none;
-          display: block;
-          padding: 8px 0;
-          font-size: 1em;
-          transition: all 0.3s ease;
-        " onmouseover="this.style.color='#fff'; this.style.paddingLeft='8px'" onmouseout="this.style.color='#00ffff'; this.style.paddingLeft='0'">
-          前言
-        </a>
-      </li>
-    </ul>
-    
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#请原谅我那贫瘠的语言系统与草履虫般的表达能力"><strong>请原谅我那贫瘠的语言系统与草履虫般的表达能力</strong></a></li>
-      </ul>
-    </li>
-    <li><a href="#为什么要创建这个分区">为什么要创建这个分区</a></li>
-  </ul>
-</nav>
-  </div>
-</div>
-
-
-
-<div style="position: fixed; bottom: 30px; right: 30px; z-index: 9999;">
-  <button 
-    onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-    style="
-      background: linear-gradient(135deg, rgba(0,255,255,0.3), rgba(0,255,255,0.1));
-      border: 2px solid #00ffff;
-      color: #00ffff;
-      padding: 15px 20px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.4em;
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 20px rgba(0,255,255,0.5);
-      backdrop-filter: blur(10px);
-      opacity: 1;
-      visibility: visible;
-    "
-    onmouseover="this.style.background='linear-gradient(135deg, rgba(0,255,255,0.4), rgba(0,255,255,0.2))'; this.style.borderColor='#00ffff'; this.style.boxShadow='0 8px 25px rgba(0,255,255,0.7)'; this.style.transform='translateY(-5px)'
-    onmouseout="this.style.background='linear-gradient(135deg, rgba(0,255,255,0.3), rgba(0,255,255,0.1))'; this.style.borderColor='#00ffff'; this.style.boxShadow='0 6px 20px rgba(0,255,255,0.5)'; this.style.transform='translateY(0)'
-  >
-    ↑
-  </button>
-</div>
-
-<style>
-  .enhanced-toc ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-  }
-  
-  .enhanced-toc li {
-    margin: 8px 0;
-    position: relative;
-  }
-  
-  .enhanced-toc li::before {
-    content: '';
-    position: absolute;
-    left: -15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    background: rgba(0,255,255,0.5);
-    border-radius: 50%;
-    transition: all 0.3s ease;
-  }
-  
-  .enhanced-toc li:hover::before {
-    background: #00ffff;
-    transform: translateY(-50%) scale(1.3);
-  }
-  
-  .enhanced-toc a {
-    color: #ccc;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: block;
-    padding: 4px 0;
-    font-size: 0.9em;
-    line-height: 1.5;
-  }
-  
-  .enhanced-toc a:hover {
-    color: #00ffff;
-    padding-left: 8px;
-  }
-  
-  .enhanced-toc a.active {
-    color: #00ffff;
-    font-weight: bold;
-    padding-left: 8px;
-    background: rgba(0,255,255,0.1);
-    border-left: 3px solid #00ffff;
-    padding-left: 12px;
-    border-radius: 0 4px 4px 0;
-  }
-  
-  .enhanced-toc a.active::before {
-    content: '▸';
-    margin-right: 5px;
-  }
-  
-  .enhanced-toc ul ul {
-    padding-left: 20px;
-    margin-top: 8px;
-    border-left: 2px solid rgba(0,255,255,0.2);
-  }
-  
-  .enhanced-toc ul ul li {
-    margin: 6px 0;
-  }
-  
-  .enhanced-toc ul ul li::before {
-    left: -12px;
-    width: 4px;
-    height: 4px;
-  }
-  
-   
-  #toc-container::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  #toc-container::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.3);
-    border-radius: 4px;
-  }
-  
-  #toc-container::-webkit-scrollbar-thumb {
-    background: rgba(0,255,255,0.3);
-    border-radius: 4px;
-    transition: all 0.3s ease;
-  }
-  
-  #toc-container::-webkit-scrollbar-thumb:hover {
-    background: rgba(0,255,255,0.5);
-  }
-  
-   
-  .toc-toggle {
-    background: none;
-    border: none;
-    color: #00ffff;
-    cursor: pointer;
-    font-size: 0.8em;
-    margin-right: 5px;
-    transition: all 0.3s ease;
-  }
-  
-  .toc-toggle:hover {
-    color: #fff;
-    transform: rotate(90deg);
-  }
-  
-   
-  @media (max-width: 1024px) {
-    #toc-container {
-      position: relative;
-      right: auto;
-      top: auto;
-      width: 100%;
-      max-width: 400px;
-      margin: 0 auto 30px;
-      max-height: 400px;
-    }
-    
-    div[style*="bottom: 30px; right: 30px;"] {
-      right: 20px;
-      bottom: 20px;
-    }
-    
-    div[style*="bottom: 30px; right: 30px;"] button {
-      padding: 12px 16px;
-      font-size: 1.2em;
-    }
-  }
-  
-   
-  #toc-container:hover {
-    box-shadow: 0 10px 40px rgba(0,255,255,0.6);
-    transform: translateY(-2px);
-  }
-  
-   
-  .enhanced-toc li {
-    transition: all 0.3s ease;
-  }
-  
-  .enhanced-toc li:hover {
-    transform: translateX(5px);
-  }
-</style>
-
-<script>
-  let tocCollapsed = false;
-  
-  function toggleTOC() {
-    const tocContent = document.getElementById('toc-content');
-    const button = event.target.closest('button');
-    const buttonText = document.getElementById('toc-toggle-text');
-    
-    if (tocCollapsed) {
-      tocContent.style.maxHeight = '1000px';
-      tocContent.style.opacity = '1';
-      buttonText.textContent = '收起';
-    } else {
-      tocContent.style.maxHeight = '0';
-      tocContent.style.opacity = '0';
-      buttonText.textContent = '展开';
-    }
-    
-    tocCollapsed = !tocCollapsed;
-  }
-  
-  
-  document.addEventListener('DOMContentLoaded', function() {
-    
-    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    const tocLinks = document.querySelectorAll('.enhanced-toc a');
-    
-    if (headings.length > 0 && tocLinks.length > 0) {
-      const observerOptions = {
-        root: null,
-        rootMargin: '-10% 0px -80% 0px',
-        threshold: 0
-      };
       
-      const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            tocLinks.forEach(link => {
-              link.classList.remove('active');
-              if (link.getAttribute('href') === '#' + id) {
-                link.classList.add('active');
-                
-                const tocContainer = document.getElementById('toc-container');
-                const activeLink = link;
-                
-                if (tocContainer && activeLink) {
-                  
-                  
-                  const containerRect = tocContainer.getBoundingClientRect();
-                  const linkRect = activeLink.getBoundingClientRect();
-                  
-                  
-                  const relativeTop = linkRect.top - containerRect.top;
-                  
-                  
-                  const scrollPosition = tocContainer.scrollTop + relativeTop - (containerRect.height / 2) + (linkRect.height / 2);
-                  
-                  
-                  const finalScrollPosition = Math.max(0, scrollPosition);
-                  
-                  
-                  tocContainer.scrollTo({
-                    top: finalScrollPosition,
-                    behavior: 'smooth'
-                  });
-                }
-              }
-            });
-          }
-        });
-      }, observerOptions);
       
-      headings.forEach(heading => {
-        if (heading.getAttribute('id')) {
-          observer.observe(heading);
-        }
-      });
-    }
-    
-    
-    const tocItems = document.querySelectorAll('.enhanced-toc li');
-    tocItems.forEach(item => {
-      const sublist = item.querySelector('ul');
-      if (sublist) {
-        const toggle = document.createElement('button');
-        toggle.className = 'toc-toggle';
-        toggle.innerHTML = '▶';
-        toggle.onclick = function() {
-          sublist.style.display = sublist.style.display === 'none' ? 'block' : 'none';
-          this.innerHTML = sublist.style.display === 'none' ? '▶' : '▼';
-        };
-        const link = item.querySelector('a');
-        if (link) {
-          link.parentNode.insertBefore(toggle, link);
-        }
-      }
-    });
-  });
-</script>
-      </div>
     </div>
   </div>
 
