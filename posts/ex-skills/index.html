@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title>前言 | NGC 2237&#39;s Blog</title>
+    <title>ex-skills搭建记录 | NGC 2237&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body, html {
@@ -14,6 +14,451 @@
         }
     </style>
     
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .article-content h2 {
+    color: #00ffff;
+    font-size: clamp(1.5em, 3vw, 1.8em);
+    margin: 40px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0,255,255,0.2);
+  }
+  
+  .article-content h3 {
+    color: #00ffff;
+    font-size: clamp(1.2em, 2.5vw, 1.4em);
+    margin: 30px 0 15px;
+  }
+  
+  .article-content p {
+    margin: 15px 0;
+    line-height: 1.8;
+  }
+  
+  .article-content ul,
+  .article-content ol {
+    margin: 15px 0;
+    padding-left: 30px;
+  }
+  
+  .article-content li {
+    margin: 8px 0;
+  }
+  
+  .article-content a {
+    color: #00ffff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,255,255,0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .article-content a:hover {
+    color: #fff;
+    border-bottom-color: #00ffff;
+  }
+  
+  .article-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0,255,255,0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .article-content img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,255,255,0.5);
+  }
+  
+  .article-content blockquote {
+    border-left: 3px solid #00ffff;
+    padding: 10px 20px;
+    margin: 20px 0;
+    background: rgba(0,255,255,0.05);
+    border-radius: 0 8px 8px 0;
+  }
+  
+  .article-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .article-content th {
+    background: rgba(0,255,255,0.1);
+    padding: 12px;
+    text-align: left;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .article-content td {
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .article-content tr:hover {
+    background: rgba(0,255,255,0.05);
+  }
+  
+   
+  .article-content pre,
+  .article-content .highlight pre {
+    background: #1e1e1e;
+    padding: 0;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 20px 0;
+    border: 1px solid #333;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  .article-content code,
+  .article-content .highlight code {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+  }
+  
+  .article-content pre code,
+  .article-content .highlight pre code {
+    background: none;
+    padding: 0;
+  }
+  
+   
+  .article-content .chroma,
+  .article-content .highlight .chroma {
+    color: #d4d4d4;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    position: relative;
+  }
+  
+   
+  .article-content .chroma::before,
+  .article-content .highlight .chroma::before {
+    content: '📋';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #888;
+    font-size: 0.9em;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+    z-index: 10;
+  }
+  
+  .article-content .chroma:hover::before,
+  .article-content .highlight .chroma:hover::before {
+    color: #00ffff;
+    background: rgba(0,255,255,0.2);
+  }
+  
+   
+  .article-content .chroma .code,
+  .article-content .highlight .chroma .code {
+    padding: 20px;
+  }
+  
+   
+  .article-content .chroma .k,
+  .article-content .highlight .chroma .k {
+    color: #ff79c6;
+  }
+  
+  .article-content .chroma .kc,
+  .article-content .highlight .chroma .kc {
+    color: #ff79c6;
+  }
+  
+  .article-content .chroma .kd,
+  .article-content .highlight .chroma .kd {
+    color: #ff79c6;
+  }
+  
+  .article-content .chroma .kn,
+  .article-content .highlight .chroma .kn {
+    color: #ff79c6;
+  }
+  
+  .article-content .chroma .kp,
+  .article-content .highlight .chroma .kp {
+    color: #ff79c6;
+  }
+  
+  .article-content .chroma .kr,
+  .article-content .highlight .chroma .kr {
+    color: #ff79c6;
+  }
+  
+  .article-content .chroma .kt,
+  .article-content .highlight .chroma .kt {
+    color: #8be9fd;
+  }
+  
+  .article-content .chroma .na,
+  .article-content .highlight .chroma .na {
+    color: #50fa7b;
+  }
+  
+  .article-content .chroma .nc,
+  .article-content .highlight .chroma .nc {
+    color: #50fa7b;
+  }
+  
+  .article-content .chroma .no,
+  .article-content .highlight .chroma .no {
+    color: #bd93f9;
+  }
+  
+  .article-content .chroma .nd,
+  .article-content .highlight .chroma .nd {
+    color: #50fa7b;
+  }
+  
+  .article-content .chroma .ni,
+  .article-content .highlight .chroma .ni {
+    color: #d4d4d4;
+  }
+  
+  .article-content .chroma .ne,
+  .article-content .highlight .chroma .ne {
+    color: #50fa7b;
+  }
+  
+  .article-content .chroma .nf,
+  .article-content .highlight .chroma .nf {
+    color: #50fa7b;
+  }
+  
+  .article-content .chroma .nl,
+  .article-content .highlight .chroma .nl {
+    color: #d4d4d4;
+  }
+  
+  .article-content .chroma .nn,
+  .article-content .highlight .chroma .nn {
+    color: #d4d4d4;
+  }
+  
+  .article-content .chroma .nx,
+  .article-content .highlight .chroma .nx {
+    color: #50fa7b;
+  }
+  
+  .article-content .chroma .py,
+  .article-content .highlight .chroma .py {
+    color: #d4d4d4;
+  }
+  
+  .article-content .chroma .nt,
+  .article-content .highlight .chroma .nt {
+    color: #ff79c6;
+  }
+  
+  .article-content .chroma .nv,
+  .article-content .highlight .chroma .nv {
+    color: #d4d4d4;
+  }
+  
+  .article-content .chroma .l,
+  .article-content .highlight .chroma .l {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .ld,
+  .article-content .highlight .chroma .ld {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .s,
+  .article-content .highlight .chroma .s {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .sa,
+  .article-content .highlight .chroma .sa {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .sb,
+  .article-content .highlight .chroma .sb {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .sc,
+  .article-content .highlight .chroma .sc {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .dl,
+  .article-content .highlight .chroma .dl {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .sd,
+  .article-content .highlight .chroma .sd {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .s2,
+  .article-content .highlight .chroma .s2 {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .se,
+  .article-content .highlight .chroma .se {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .sh,
+  .article-content .highlight .chroma .sh {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .si,
+  .article-content .highlight .chroma .si {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .sx,
+  .article-content .highlight .chroma .sx {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .sr,
+  .article-content .highlight .chroma .sr {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .s1,
+  .article-content .highlight .chroma .s1 {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .ss,
+  .article-content .highlight .chroma .ss {
+    color: #f1fa8c;
+  }
+  
+  .article-content .chroma .m,
+  .article-content .highlight .chroma .m {
+    color: #bd93f9;
+  }
+  
+  .article-content .chroma .mb,
+  .article-content .highlight .chroma .mb {
+    color: #bd93f9;
+  }
+  
+  .article-content .chroma .mf,
+  .article-content .highlight .chroma .mf {
+    color: #bd93f9;
+  }
+  
+  .article-content .chroma .mh,
+  .article-content .highlight .chroma .mh {
+    color: #bd93f9;
+  }
+  
+  .article-content .chroma .mi,
+  .article-content .highlight .chroma .mi {
+    color: #bd93f9;
+  }
+  
+  .article-content .chroma .mo,
+  .article-content .highlight .chroma .mo {
+    color: #bd93f9;
+  }
+  
+  .article-content .chroma .c,
+  .article-content .highlight .chroma .c {
+    color: #6272a4;
+  }
+  
+  .article-content .chroma .ch,
+  .article-content .highlight .chroma .ch {
+    color: #6272a4;
+  }
+  
+  .article-content .chroma .cm,
+  .article-content .highlight .chroma .cm {
+    color: #6272a4;
+  }
+  
+  .article-content .chroma .c1,
+  .article-content .highlight .chroma .c1 {
+    color: #6272a4;
+  }
+  
+  .article-content .chroma .cs,
+  .article-content .highlight .chroma .cs {
+    color: #6272a4;
+  }
+  
+  .article-content .chroma .o,
+  .article-content .highlight .chroma .o {
+    color: #ff79c6;
+  }
+  
+  .article-content .chroma .ow,
+  .article-content .highlight .chroma .ow {
+    color: #ff79c6;
+  }
+  
+  .article-content .chroma .p,
+  .article-content .highlight .chroma .p {
+    color: #d4d4d4;
+  }
+  
+  @media (max-width: 768px) {
+    .article-content h2 {
+      font-size: 1.5em;
+    }
+    
+    .article-content h3 {
+      font-size: 1.2em;
+    }
+  }
+</style>
+<script>
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const codeBlocks = document.querySelectorAll('.article-content .chroma, .article-content .highlight .chroma');
+    codeBlocks.forEach(block => {
+      block.addEventListener('click', function(e) {
+        if (e.target === this || e.target === this.querySelector('code')) {
+          const code = this.querySelector('code').textContent;
+          navigator.clipboard.writeText(code).then(() => {
+            const originalContent = this.style.content;
+            this.style.content = '✅';
+            setTimeout(() => {
+              this.style.content = '📋';
+            }, 2000);
+          }).catch(err => {
+            console.error('复制失败:', err);
+          });
+        }
+      });
+    });
+  });
+</script>
+
     <style>
   * {
     margin: 0;
@@ -283,225 +728,17 @@
         
   
   
-  <style>
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .article-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      gap: 40px;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .article-content-wrapper {
-      flex: 1;
-      background: rgba(0,0,0,0.7);
-      border-radius: 16px;
-      padding: 40px;
-      border: 1px solid rgba(0,255,255,0.2);
-      animation: fadeInDown 0.8s ease;
-    }
-    
-    .article-header {
-      margin-bottom: 40px;
-      text-align: center;
-    }
-    
-    .article-title {
-      color: #00ffff;
-      font-size: 2.5em;
-      margin: 0 0 20px;
-      text-shadow: 0 0 20px rgba(0,255,255,0.5);
-    }
-    
-    .article-meta {
-      color: #888;
-      font-size: 0.9em;
-      margin-bottom: 30px;
-    }
-    
-    .article-meta span {
-      margin: 0 10px;
-    }
-    
-    .article-content {
-      color: #fff;
-      line-height: 2.2;
-    }
-    
-    .article-content p {
-      margin-bottom: 25px;
-      text-indent: 2em;
-    }
-    
-    .article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6 {
-      color: #00ffff;
-      margin: 40px 0 25px;
-      line-height: 1.6;
-    }
-    
-    .article-content ul, .article-content ol {
-      margin: 25px 0;
-      padding-left: 2em;
-      line-height: 2.2;
-    }
-    
-    .article-content li {
-      margin-bottom: 12px;
-    }
-    
-    .article-content ul li {
-      list-style-type: disc;
-    }
-    
-    .article-content ol li {
-      list-style-type: decimal;
-    }
-    
-    .article-content blockquote {
-      border-left: 4px solid #00ffff;
-      padding-left: 20px;
-      margin: 25px 0;
-      color: #aaa;
-      font-style: italic;
-      line-height: 2;
-    }
-    
-    .article-content pre {
-      background: rgba(0,0,0,0.8);
-      border: 1px solid rgba(0,255,255,0.3);
-      border-radius: 8px;
-      padding: 20px;
-      margin: 25px 0;
-      overflow-x: auto;
-      line-height: 1.8;
-    }
-    
-    .article-content code {
-      background: rgba(0,255,255,0.1);
-      color: #00ffff;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-family: 'Courier New', monospace;
-      font-size: 0.9em;
-    }
-    
-    .article-content pre code {
-      background: none;
-      padding: 0;
-      color: #fff;
-    }
-    
-    .article-content hr {
-      border: none;
-      border-top: 1px solid rgba(0,255,255,0.3);
-      margin: 40px 0;
-    }
-    
-    .article-content table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 25px 0;
-    }
-    
-    .article-content th, .article-content td {
-      border: 1px solid rgba(0,255,255,0.3);
-      padding: 12px;
-      text-align: left;
-      color: #fff;
-    }
-    
-    .article-content th {
-      background: rgba(0,255,255,0.1);
-      color: #00ffff;
-    }
-    
-    .article-content img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin: 25px 0;
-    }
-    
-    .article-content strong {
-      color: #00ffff;
-      font-weight: bold;
-    }
-    
-    .article-content em {
-      color: #aaa;
-      font-style: italic;
-    }
-    
-    .article-content a {
-      color: #00ffff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    
-    .article-content a:hover {
-      text-decoration: underline;
-    }
-    
-    .article-tags {
-      margin-top: 40px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    
-    .article-tag {
-      font-size: 0.8em;
-      color: #00ffff;
-      background: rgba(0,255,255,0.1);
-      padding: 5px 15px;
-      border-radius: 20px;
-    }
-    
-    .toc-sidebar {
-      flex-shrink: 0;
-      width: 300px;
-    }
-    
-    @media (max-width: 1024px) {
-      .article-container {
-        flex-direction: column;
-      }
-      
-      .toc-sidebar {
-        width: 100%;
-      }
-      
-      .article-content-wrapper {
-        order: 2;
-      }
-      
-      .toc-sidebar {
-        order: 1;
-      }
-    }
-  </style>
   
   <div style="
-    background-image: url('https://LuoHuilin3055.github.io/myblog/images/learning.jpg');
+    background-image: url('https://LuoHuilin3055.github.io/myblog/images/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     min-height: 100vh;
     padding: 120px 20px 60px;
+    background-color: #000000;
     position: relative;
-  " id="page-top">
+  ">
     
     <div style="
       position: absolute;
@@ -509,56 +746,228 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(0,0,0,0.85);
+      background: rgba(0,0,0,0.7);
       z-index: 0;
     "></div>
     
-    <div class="article-container">
+    <div style="max-width: 1400px; margin: 0 auto; display: flex; gap: 40px; position: relative; z-index: 1;">
       
-      <div class="article-content-wrapper">
+      <article style="flex: 1; background: rgba(0,0,0,0.7); border-radius: 15px; padding: 40px; border: 1px solid rgba(0,255,255,0.3); backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0,0,0,0.5); transition: all 0.3s ease; transform: translateY(0);">
         
-        <div class="article-header">
-          <h1 class="article-title">前言</h1>
-          <div class="article-meta">
-            <span>📅 2026-03-24</span>
-            
-          </div>
+        
+        
+        <h1 style="color: #00ffff; font-size: clamp(2em, 5vw, 2.5em); margin: 0 0 20px; text-shadow: 0 0 10px rgba(0,255,255,0.3); animation: fadeIn 0.8s ease;">ex-skills搭建记录</h1>
+        
+        <div style="color: #ccc; margin: 20px 0; display: flex; gap: 20px; flex-wrap: wrap; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+          <span>📅 2026-04-09</span>
+          
+          <span>✏️ 2026-04-10</span>
+          
+          <span>📝 46 字</span>
+          <span>⏱️ 1 分钟</span>
         </div>
         
         
-        <div class="article-content">
-          <h2 id="请原谅我那贫瘠的语言系统与草履虫般的表达能力"><strong>请原谅我那贫瘠的语言系统与草履虫般的表达能力</strong></h2>
-<h1 id="为什么要创建这个分区">为什么要创建这个分区</h1>
+        
+<div style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
+  
+    <a href="https://LuoHuilin3055.github.io/tags/%E7%AC%94%E8%AE%B0" 
+       style="
+         display: inline-flex;
+         align-items: center;
+         gap: 4px;
+         padding: 4px 12px;
+         background: rgba(0, 255, 255, 0.1);
+         border: 1px solid rgba(0, 255, 255, 0.3);
+         border-radius: 15px;
+         color: #00ffff;
+         font-size: 0.85em;
+         text-decoration: none;
+         transition: all 0.3s ease;
+       "
+       onmouseover="this.style.background='rgba(0, 255, 255, 0.3)'; this.style.borderColor='#00ffff'"
+       onmouseout="this.style.background='rgba(0, 255, 255, 0.1)'; this.style.borderColor='rgba(0, 255, 255, 0.3)'">
+      <span>🏷️</span>
+      <span>笔记</span>
+    </a>
+  
+    <a href="https://LuoHuilin3055.github.io/tags/#ai" 
+       style="
+         display: inline-flex;
+         align-items: center;
+         gap: 4px;
+         padding: 4px 12px;
+         background: rgba(0, 255, 255, 0.1);
+         border: 1px solid rgba(0, 255, 255, 0.3);
+         border-radius: 15px;
+         color: #00ffff;
+         font-size: 0.85em;
+         text-decoration: none;
+         transition: all 0.3s ease;
+       "
+       onmouseover="this.style.background='rgba(0, 255, 255, 0.3)'; this.style.borderColor='#00ffff'"
+       onmouseout="this.style.background='rgba(0, 255, 255, 0.1)'; this.style.borderColor='rgba(0, 255, 255, 0.3)'">
+      <span>🏷️</span>
+      <span>#AI</span>
+    </a>
+  
+</div>
+
+
+        
+        <div class="article-content" style="color: #fff; line-height: 1.8; margin-top: 30px;">
+          <p><a href="https://github.com/titanwings/ex-skill?tab=readme-ov-file">titanwings/ex-skill: 致你忘不掉的那个TA，你们干大模型都是码圣 It&rsquo;s giving rebirth era. Welcome to Digital Life 1.0. 🫶</a></p>
+<h1 id="前言">前言</h1>
 <ul>
-<li>先说说为什么搞了这个博客
-<ul>
-<li>最开始想创建它是因为看见好朋友弄了一个，其实当时我也没有特别想做，我总觉得这种东西门槛很高、涉及复杂的界面与繁多的知识点、还要挤占我大量的游戏时间。但后面某一天我突然意识到，我不能再这样每天除了刷视频就是打游戏，大一上已经荒废了，下学期不能再重蹈覆辙。然后就鬼使神差地开始在<code>CSDN</code>搜索“如何创建一个自己的博客”，又去问<code>DeepSeek</code>，花了两个下半天终于把网站给部署出来。</li>
-<li>网站部署成功后，我又想着，弄了这么久总不能就让它空着吧，刚好这段时间我在准备蓝桥杯（为什么是这段时间呢，因为我上学期和寒假都在打游戏），我就把准备的蓝桥杯的两篇文章传上来了</li>
-<li><strong>上面两段好像讲了一堆废话，请原谅我现在比草履虫还差的表达能力。</strong> 总结一下，这个博客最初是跟风之作，现在意外成为一个激励我学习、摆脱游戏的动力</li>
+<li>1天前刚刚装完虚拟机，看见一篇文章讲&quot;colleague.skill&quot;，又不想学习，于是就想着弄一个来试试。同时呢又害怕记忆不太好，于是就写了这个博客来记录一下，所以这篇文章<em>技术含量不高且操作繁琐</em></li>
+<li>我是菜鸟</li>
 </ul>
-</li>
-<li>现在讲讲这个分区
+<h1 id="步骤">步骤</h1>
+<h2 id="更新系统">更新系统</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt update <span class="o">&amp;&amp;</span> sudo apt upgrade -y
+</span></span></code></pre></div><h2 id="安装基础工具">安装基础工具</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install -y git curl nodejs npm python3 python3-pip
+</span></span></code></pre></div><h2 id="安装openclaw">安装<code>OpenClaw</code></h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo npm install -g openclaw
+</span></span></code></pre></div><h1 id="可以同时做">可以同时做</h1>
+<h2 id="提取聊天记录">提取聊天记录</h2>
 <ul>
-<li>高中的时候我有一个本子，上面记录每天的作业、待办事项、一些很有趣的小事还有一些很喜欢的句子，刚上大学我也准备了一个，但可能是因为之前没怎么用过手机，我对电子产品的依赖性特别高，游戏瘾也很大，每天不是刷视频就是打游戏，久而久之本子就被遗忘了。每次试图捡起来但是也坚持不了许久。</li>
-<li>现在建立这个分区，一是我又想重新记录一下我每天的生活，不至于每天浑浑噩噩，不知道干了些什么、学了些什么；同时也督促我学习（因为这样才有东西可以写）与重新锻炼我的表达能力（<strong>有点好笑的是，在高中语文是强项，现在写一篇随笔都断断续续、没有逻辑</strong>）</li>
-</ul>
-</li>
+<li><a href="https://github.com/amtech/tool-WeChatMsg">amtech/tool-WeChatMsg: 提取微信聊天记录，将其导出成HTML、Word、CSV文档永久保存，对聊天记录进行分析生成年度聊天报告</a></li>
+<li></li>
 </ul>
 
-          
-          
-          
-            <div class="article-tags">
-              
-                <span class="article-tag">日志</span>
-              
-            </div>
-          
         </div>
-      </div>
+        
+        
+        <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid #333;">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+  
+  <div>
+    
+    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+      <span style="color: #888; font-size: 0.9em;">标签：</span>
+      
+        <a href="https://LuoHuilin3055.github.io/tags/%E7%AC%94%E8%AE%B0" 
+           style="
+             padding: 6px 14px;
+             background: rgba(0, 255, 255, 0.15);
+             border: 1px solid rgba(0, 255, 255, 0.4);
+             border-radius: 20px;
+             color: #00ffff;
+             font-size: 0.9em;
+             text-decoration: none;
+             transition: all 0.3s ease;
+           "
+           onmouseover="this.style.background='rgba(0, 255, 255, 0.3)'; this.style.transform='translateY(-2px)'"
+           onmouseout="this.style.background='rgba(0, 255, 255, 0.15)'; this.style.transform='translateY(0)'">
+          笔记
+        </a>
+      
+        <a href="https://LuoHuilin3055.github.io/tags/#ai" 
+           style="
+             padding: 6px 14px;
+             background: rgba(0, 255, 255, 0.15);
+             border: 1px solid rgba(0, 255, 255, 0.4);
+             border-radius: 20px;
+             color: #00ffff;
+             font-size: 0.9em;
+             text-decoration: none;
+             transition: all 0.3s ease;
+           "
+           onmouseover="this.style.background='rgba(0, 255, 255, 0.3)'; this.style.transform='translateY(-2px)'"
+           onmouseout="this.style.background='rgba(0, 255, 255, 0.15)'; this.style.transform='translateY(0)'">
+          #AI
+        </a>
+      
+    </div>
+    
+  </div>
+  
+  
+  <div style="display: flex; gap: 10px;">
+    <span style="color: #888; font-size: 0.9em;">分享：</span>
+    <a href="https://twitter.com/intent/tweet?text=ex-skills%e6%90%ad%e5%bb%ba%e8%ae%b0%e5%bd%95&url=https%3a%2f%2fLuoHuilin3055.github.io%2fmyblog%2fposts%2fex-skills%2f" 
+       target="_blank"
+       style="
+         padding: 6px 12px;
+         background: #1da1f2;
+         border-radius: 5px;
+         color: #fff;
+         font-size: 0.85em;
+         text-decoration: none;
+         transition: opacity 0.3s;
+       "
+       onmouseover="this.style.opacity='0.8'"
+       onmouseout="this.style.opacity='1'">Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fLuoHuilin3055.github.io%2fmyblog%2fposts%2fex-skills%2f" 
+       target="_blank"
+       style="
+         padding: 6px 12px;
+         background: #4267B2;
+         border-radius: 5px;
+         color: #fff;
+         font-size: 0.85em;
+         text-decoration: none;
+         transition: opacity 0.3s;
+       "
+       onmouseover="this.style.opacity='0.8'"
+       onmouseout="this.style.opacity='1'">Facebook</a>
+  </div>
+</div>
+
+
+
+<div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid #333;">
+  <div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+    
+    <a href="/myblog/posts/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" 
+       style="
+         flex: 1;
+         min-width: 200px;
+         padding: 15px 20px;
+         background: rgba(0,0,0,0.5);
+         border: 1px solid #333;
+         border-radius: 10px;
+         color: #fff;
+         text-decoration: none;
+         transition: all 0.3s ease;
+       "
+       onmouseover="this.style.borderColor='#00ffff'; this.style.background='rgba(0,255,255,0.1)'"
+       onmouseout="this.style.borderColor='#333'; this.style.background='rgba(0,0,0,0.5)'">
+      <div style="font-size: 0.8em; color: #888; margin-bottom: 5px;">← 上一篇</div>
+      <div style="font-weight: bold; color: #00ffff;">数据结构</div>
+    </a>
+    
+    
+    
+    <a href="/myblog/posts/%E5%87%BA%E6%B8%B8/" 
+       style="
+         flex: 1;
+         min-width: 200px;
+         padding: 15px 20px;
+         background: rgba(0,0,0,0.5);
+         border: 1px solid #333;
+         border-radius: 10px;
+         color: #fff;
+         text-decoration: none;
+         text-align: right;
+         transition: all 0.3s ease;
+       "
+       onmouseover="this.style.borderColor='#00ffff'; this.style.background='rgba(0,255,255,0.1)'"
+       onmouseout="this.style.borderColor='#333'; this.style.background='rgba(0,0,0,0.5)'">
+      <div style="font-size: 0.8em; color: #888; margin-bottom: 5px;">下一篇 →</div>
+      <div style="font-weight: bold; color: #00ffff;">与cdx的出游计划</div>
+    </a>
+    
+  </div>
+</div>
+
+
+        </div>
+      </article>
       
       
-      <div class="toc-sidebar">
+      <div style="flex-shrink: 0; width: 280px;">
         
 <div style="
   position: fixed;
@@ -635,19 +1044,26 @@
           font-size: 1em;
           transition: all 0.3s ease;
         " onmouseover="this.style.color='#fff'; this.style.paddingLeft='8px'" onmouseout="this.style.color='#00ffff'; this.style.paddingLeft='0'">
-          前言
+          ex-skills搭建记录
         </a>
       </li>
     </ul>
     
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#步骤">步骤</a>
       <ul>
-        <li><a href="#请原谅我那贫瘠的语言系统与草履虫般的表达能力"><strong>请原谅我那贫瘠的语言系统与草履虫般的表达能力</strong></a></li>
+        <li><a href="#更新系统">更新系统</a></li>
+        <li><a href="#安装基础工具">安装基础工具</a></li>
+        <li><a href="#安装openclaw">安装<code>OpenClaw</code></a></li>
       </ul>
     </li>
-    <li><a href="#为什么要创建这个分区">为什么要创建这个分区</a></li>
+    <li><a href="#可以同时做">可以同时做</a>
+      <ul>
+        <li><a href="#提取聊天记录">提取聊天记录</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
