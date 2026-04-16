@@ -13,7 +13,7 @@
       <link>https://LuoHuilin3055.github.io/myblog/friends/</link>
       <pubDate>Thu, 16 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://LuoHuilin3055.github.io/myblog/friends/</guid>
-      <description>&lt;h2 id=&#34;友链列表&#34;&gt;友链列表&lt;/h2&gt;&#xA;&lt;p&gt;{{ partial &amp;ldquo;friends.html&amp;rdquo; . }}&lt;/p&gt;</description>
+      <description>&lt;p&gt;{{ partial &amp;ldquo;friends.html&amp;rdquo; . }}&lt;/p&gt;</description>
     </item>
     <item>
       <title>与cdx的出游计划</title>
