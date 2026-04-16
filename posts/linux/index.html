@@ -528,6 +528,13 @@
             </a>
             
             
+            <a href="https://LuoHuilin3055.github.io/myblog/friends" style="color: white; text-decoration: none; font-size: 1.1em; transition: color 0.3s; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);" 
+               onmouseover="this.style.color='#00ffff'" 
+               onmouseout="this.style.color='white'">
+                Friends
+            </a>
+            
+            
             <div style="position: relative;">
                 <input type="text" id="search-input" placeholder="搜索..." 
                        style="
@@ -580,6 +587,14 @@
 <script>
   
   const searchData = [
+    
+    {
+      title: "友链",
+      url: "https:\/\/LuoHuilin3055.github.io\/myblog\/friends\/",
+      content: "友链 这里是我的朋友链接，欢迎大家访问！\n如何添加友链 如果您想与我交换友链，请按照以下格式在 data\/friends.yml 文件中添加您的信息：\n- name: 网站名称 url: 网站链接 description: 网站描述 avatar: 头像链接 友链列表 {{ partial \u0026ldquo;friends.html\u0026rdquo; . }}\n",
+      date: "2026-04-16",
+      tags: [ "友链", ]
+    },
     
     {
       title: "与cdx的出游计划",
@@ -747,8 +762,39 @@
       <article style="flex: 1; background: rgba(0,0,0,0.7); border-radius: 15px; padding: 40px; border: 1px solid rgba(0,255,255,0.3); backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0,0,0,0.5); transition: all 0.3s ease; transform: translateY(0);">
         
         
+        <div style="
+          margin: -40px -40px 30px -40px;
+          position: relative;
+          overflow: hidden;
+          border-radius: 15px 15px 0 0;
+        ">
+          <img 
+            src="https://LuoHuilin3055.github.io/myblog/images/background.jpg"
+            alt="Linux学习记录"
+            loading="eager"
+            decoding="async"
+            style="
+              width: 100%;
+              height: auto;
+              max-height: 400px;
+              object-fit: cover;
+              display: block;
+              transition: transform 0.3s ease;
+            "
+          />
+          
+          <div style="
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.9) 100%);
+          "></div>
+        </div>
         
-        <h1 style="color: #00ffff; font-size: clamp(2em, 5vw, 2.5em); margin: 0 0 20px; text-shadow: 0 0 10px rgba(0,255,255,0.3); animation: fadeIn 0.8s ease;">Linux学习记录</h1>
+        
+        <h1 style="color: #00ffff; font-size: clamp(2em, 5vw, 2.5em); margin: -20px 0 20px; text-shadow: 0 0 10px rgba(0,255,255,0.3); animation: fadeIn 0.8s ease;">Linux学习记录</h1>
         
         <div style="color: #ccc; margin: 20px 0; display: flex; gap: 20px; flex-wrap: wrap; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
           <span>📅 2026-04-08</span>
