@@ -585,14 +585,17 @@
     }
     
     .category-cloud {
+      position: relative;
+      width: 600px;
+      height: 500px;
+      margin: 0 auto 40px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
+      align-items: center;
       justify-content: center;
-      margin-bottom: 40px;
     }
     
-    .category-cloud a {
+    .heart-tag {
+      position: absolute;
       display: inline-block;
       text-decoration: none;
       padding: 12px 25px;
@@ -602,12 +605,12 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     
-    .category-cloud a:hover {
-      transform: translateY(-2px);
+    .heart-tag:hover {
+      transform: translateY(-2px) scale(1.05);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
     
-    .category-cloud a span {
+    .heart-tag span {
       margin-left: 5px;
       font-size: 0.85em;
       opacity: 0.8;
