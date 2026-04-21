@@ -585,17 +585,14 @@
     }
     
     .category-cloud {
-      position: relative;
-      width: 600px;
-      height: 500px;
-      margin: 0 auto 40px;
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
       justify-content: center;
+      margin-bottom: 40px;
     }
     
-    .heart-tag {
-      position: absolute;
+    .category-cloud a {
       display: inline-block;
       text-decoration: none;
       padding: 12px 25px;
@@ -605,12 +602,12 @@
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     
-    .heart-tag:hover {
-      transform: translateY(-2px) scale(1.05);
+    .category-cloud a:hover {
+      transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
     
-    .heart-tag span {
+    .category-cloud a span {
       margin-left: 5px;
       font-size: 0.85em;
       opacity: 0.8;
@@ -659,98 +656,64 @@
       
       
       
-        <div class="category-cloud" id="heartCloud">
+        <div class="category-cloud">
           
           
             
             
-            <a href="/myblog/tags/ctf/" class="heart-tag" style="background: #00ffff; color: #000;">
+            <a href="/myblog/tags/ctf/" style="background: #00ffff; color: #000;">
               CTF <span>(1)</span>
             </a>
           
             
             
-            <a href="/myblog/tags/java/" class="heart-tag" style="background: #a5b4fc; color: #000;">
+            <a href="/myblog/tags/java/" style="background: #a5b4fc; color: #000;">
               Java <span>(1)</span>
             </a>
           
             
             
-            <a href="/myblog/tags/%E5%8F%8B%E9%93%BE/" class="heart-tag" style="background: #50fa7b; color: #000;">
+            <a href="/myblog/tags/%E5%8F%8B%E9%93%BE/" style="background: #50fa7b; color: #000;">
               友链 <span>(1)</span>
             </a>
           
             
             
-            <a href="/myblog/tags/%E6%97%A5%E5%BF%97/" class="heart-tag" style="background: #ffb86c; color: #000;">
+            <a href="/myblog/tags/%E6%97%A5%E5%BF%97/" style="background: #ffb86c; color: #000;">
               日志 <span>(1)</span>
             </a>
           
             
             
-            <a href="/myblog/tags/%E7%AC%94%E8%AE%B0/" class="heart-tag" style="background: #ff79c6; color: #000;">
+            <a href="/myblog/tags/%E7%AC%94%E8%AE%B0/" style="background: #ff79c6; color: #000;">
               笔记 <span>(3)</span>
             </a>
           
             
             
-            <a href="/myblog/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" class="heart-tag" style="background: #bd93f9; color: #000;">
+            <a href="/myblog/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="background: #bd93f9; color: #000;">
               蓝桥杯 <span>(2)</span>
             </a>
           
             
             
-            <a href="/myblog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" class="heart-tag" style="background: #ff5555; color: #000;">
+            <a href="/myblog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="background: #ff5555; color: #000;">
               虚拟机 <span>(1)</span>
             </a>
           
             
             
-            <a href="/myblog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="heart-tag" style="background: #8be9fd; color: #000;">
+            <a href="/myblog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="background: #8be9fd; color: #000;">
               计算机 <span>(2)</span>
             </a>
           
             
             
-            <a href="/myblog/tags/%E9%9A%8F%E7%AC%94/" class="heart-tag" style="background: #f1fa8c; color: #000;">
+            <a href="/myblog/tags/%E9%9A%8F%E7%AC%94/" style="background: #f1fa8c; color: #000;">
               随笔 <span>(3)</span>
             </a>
           
         </div>
-        <script>
-          
-          function createHeartLayout() {
-            const container = document.getElementById('heartCloud');
-            const tags = container.querySelectorAll('.heart-tag');
-            const centerX = 300; 
-            const centerY = 250; 
-            const scale = 120; 
-            
-            tags.forEach((tag, index) => {
-              const angle = (index / tags.length) * Math.PI * 2;
-              const t = angle;
-              
-              
-              const x = 16 * Math.pow(Math.sin(t), 3);
-              const y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
-              
-              
-              const posX = centerX + x * scale / 16 + (Math.random() - 0.5) * 30;
-              const posY = centerY - y * scale / 16 + (Math.random() - 0.5) * 30;
-              
-              
-              tag.style.left = `${posX}px`;
-              tag.style.top = `${posY}px`;
-              tag.style.transform = `translate(-50%, -50%)`;
-            });
-          }
-          
-          
-          window.addEventListener('load', createHeartLayout);
-          
-          
-          window.addEventListener('resize', createHeartLayout);
-        </script>
       
       
       
