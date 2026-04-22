@@ -13,7 +13,7 @@
       <link>https://LuoHuilin3055.github.io/myblog/random/</link>
       <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
       <guid>https://LuoHuilin3055.github.io/myblog/random/</guid>
-      <description>&lt;script&gt;&#xA;  // 文章列表&#xA;  const posts = [&#xA;    &#34;/myblog/posts/从ChatGPT到AI Agent/&#34;,&#xA;    &#34;/myblog/posts/数据结构/&#34;,&#xA;    &#34;/myblog/posts/Linux/&#34;,&#xA;    &#34;/myblog/posts/作业提交指南/&#34;,&#xA;    &#34;/myblog/posts/出游/&#34;,&#xA;    &#34;/myblog/posts/脚本/&#34;,&#xA;    &#34;/myblog/posts/虚拟机配置/&#34;,&#xA;    &#34;/myblog/posts/计算机教育中缺失的一课/&#34;,&#xA;    &#34;/myblog/posts/网安导论/&#34;,&#xA;    &#34;/myblog/posts/网络空间安全概论/&#34;,&#xA;    &#34;/myblog/posts/CTF/&#34;,&#xA;    &#34;/myblog/posts/Kali Linux/&#34;,&#xA;    &#34;/myblog/posts/ex-skills/&#34;,&#xA;    &#34;/myblog/posts/first-post/&#34;,&#xA;    &#34;/myblog/posts/未命名/&#34;,&#xA;    &#34;/myblog/posts/Java学习/蓝桥杯/&#34;,&#xA;    &#34;/myblog/posts/Java学习/题目/&#34;&#xA;  ];&#xA;  &#xA;  // 随机选择一篇文章&#xA;  const randomPost = posts[Math.floor(Math.random() * posts.length)];&#xA;  &#xA;  // 重定向到随机文章&#xA;  window.location.href = randomPost;&#xA;&lt;/script&gt;&#xA;&lt;p&gt;正在跳转到随机文章&amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;p&gt;正在跳转到随机文章&amp;hellip;&lt;/p&gt;</description>
     </item>
     <item>
       <title>友链</title>
