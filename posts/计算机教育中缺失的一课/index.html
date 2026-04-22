@@ -723,6 +723,14 @@
   const searchData = [
     
     {
+      title: "随机文章",
+      url: "http:\/\/localhost:1313\/myblog\/random\/",
+      content: "正在跳转到随机文章\u0026hellip;\n",
+      date: "2026-04-22",
+      tags: []
+    },
+    
+    {
       title: "友链",
       url: "http:\/\/localhost:1313\/myblog\/friends\/",
       content: "{{ partial \u0026ldquo;friends.html\u0026rdquo; . }}\n",
@@ -998,44 +1006,47 @@
         
 <div style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
   
+  
+    
+    
     <a href="/myblog/tags/%E7%AC%94%E8%AE%B0" 
        style="
          display: inline-flex;
          align-items: center;
-         gap: 4px;
-         padding: 4px 12px;
-         background: rgba(0, 255, 255, 0.1);
-         border: 1px solid rgba(0, 255, 255, 0.3);
-         border-radius: 15px;
-         color: #00ffff;
+         padding: 6px 14px;
+         background: #00ffff;
+         border-radius: 18px;
+         color: #000;
          font-size: 0.85em;
+         font-weight: 500;
          text-decoration: none;
-         transition: all 0.3s ease;
+         transition: all 0.2s ease;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
        "
-       onmouseover="this.style.background='rgba(0, 255, 255, 0.3)'; this.style.borderColor='#00ffff'"
-       onmouseout="this.style.background='rgba(0, 255, 255, 0.1)'; this.style.borderColor='rgba(0, 255, 255, 0.3)'">
-      <span>🏷️</span>
-      <span>笔记</span>
+       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.3)'"
+       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0, 0, 0, 0.2)'">
+      笔记
     </a>
   
+    
+    
     <a href="/myblog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA" 
        style="
          display: inline-flex;
          align-items: center;
-         gap: 4px;
-         padding: 4px 12px;
-         background: rgba(0, 255, 255, 0.1);
-         border: 1px solid rgba(0, 255, 255, 0.3);
-         border-radius: 15px;
-         color: #00ffff;
+         padding: 6px 14px;
+         background: #a5b4fc;
+         border-radius: 18px;
+         color: #000;
          font-size: 0.85em;
+         font-weight: 500;
          text-decoration: none;
-         transition: all 0.3s ease;
+         transition: all 0.2s ease;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
        "
-       onmouseover="this.style.background='rgba(0, 255, 255, 0.3)'; this.style.borderColor='#00ffff'"
-       onmouseout="this.style.background='rgba(0, 255, 255, 0.1)'; this.style.borderColor='rgba(0, 255, 255, 0.3)'">
-      <span>🏷️</span>
-      <span>计算机</span>
+       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.3)'"
+       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0, 0, 0, 0.2)'">
+      计算机
     </a>
   
 </div>
@@ -1560,6 +1571,14 @@
     .ananke-socials a:hover {
       color: #00ffff !important;
     }
+    .runtime {
+      text-align: center;
+      margin-top: 20px;
+      color: #00ffff;
+      font-size: 0.9rem;
+      padding-top: 10px;
+      border-top: 1px solid rgba(0, 255, 255, 0.2);
+    }
   </style>
   <div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto;">
     <a href="http://localhost:1313/myblog/" style="color: #fff; font-size: 1rem; text-decoration: none; padding: 10px 15px; transition: all 0.3s ease;" onmouseover="this.style.color='#00ffff'" onmouseout="this.style.color='#fff'">
@@ -1568,6 +1587,31 @@
     <div><div class="ananke-socials"></div>
 </div>
   </div>
+  <div class="runtime" id="runtime">
+    本站居然运行了 <span id="runtime-count">0</span> 天 0 小时 0 分 0 秒❤️
+  </div>
+  <script>
+    
+    const startTime = new Date('2026-03-21 00:00:00').getTime();
+    
+    function updateRuntime() {
+      const now = new Date().getTime();
+      const diff = now - startTime;
+      
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      
+      document.getElementById('runtime').innerHTML = `本站居然运行了 ${days} 天 ${hours} 小时 ${minutes} 分 ${seconds} 秒❤️`;
+    }
+    
+    
+    updateRuntime();
+    
+    
+    setInterval(updateRuntime, 1000);
+  </script>
 </footer>
 
     
@@ -1614,6 +1658,90 @@
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape' && lightbox.classList.contains('active')) {
                     closeLightbox();
+                }
+            });
+            
+            
+            function createFireworks(x, y) {
+                const colors = ['#00ffff', '#a5b4fc', '#ffffff', '#ff79c6', '#50fa7b', '#bd93f9', '#ffb86c', '#ff5555'];
+                const particles = 25;
+                const maxParticles = 120;
+                let currentParticles = 0;
+                
+                for (let i = 0; i < particles; i++) {
+                    if (currentParticles >= maxParticles) break;
+                    
+                    const particle = document.createElement('div');
+                    const size = Math.random() * 4 + 2;
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    particle.style.cssText = `
+                        position: fixed;
+                        left: ${x}px;
+                        top: ${y}px;
+                        width: ${size}px;
+                        height: ${size}px;
+                        background: ${color};
+                        border-radius: 50%;
+                        pointer-events: none;
+                        z-index: 9999;
+                        box-shadow: 0 0 ${size * 2}px ${color};
+                    `;
+                    
+                    document.body.appendChild(particle);
+                    currentParticles++;
+                    
+                    const angle = (Math.PI * 2 / particles) * i + Math.random() * 0.2;
+                    const distance = 60 + Math.random() * 40;
+                    const vx = Math.cos(angle) * distance * 0.06;
+                    const vy = Math.sin(angle) * distance * 0.06;
+                    
+                    let px = 0, py = 0;
+                    let alpha = 0;
+                    let scale = 0;
+                    let gravity = 0.3;
+                    
+                    function animate() {
+                        px += vx;
+                        py += vy + gravity;
+                        gravity += 0.03;
+                        alpha = Math.min(alpha + 0.1, 1);
+                        scale = Math.min(scale + 0.1, 1);
+                        
+                        if (alpha > 0.7) {
+                            alpha -= 0.03;
+                        }
+                        
+                        if (alpha <= 0) {
+                            document.body.removeChild(particle);
+                            currentParticles--;
+                            return;
+                        }
+                        
+                        particle.style.transform = `translate(${px}px, ${py}px) scale(${scale})`;
+                        particle.style.opacity = alpha;
+                        requestAnimationFrame(animate);
+                    }
+                    
+                    requestAnimationFrame(animate);
+                }
+            }
+            
+            
+            let lastClickTime = 0;
+            const clickCooldown = 200; 
+            
+            
+            document.addEventListener('click', function(e) {
+                const currentTime = Date.now();
+                if (currentTime - lastClickTime < clickCooldown) {
+                    return;
+                }
+                lastClickTime = currentTime;
+                
+                
+                if (!lightbox.classList.contains('active')) {
+                    createFireworks(e.clientX, e.clientY);
                 }
             });
         });
