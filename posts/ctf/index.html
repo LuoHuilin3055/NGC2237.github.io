@@ -1012,8 +1012,7 @@
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </span></span></code></pre></div><p><code>flag{dark logic}</code></p>
 <hr>
-<h1 id="png图片隐写"><code>PNG</code>图片隐写</h1>
-<h2 id="判断类型">判断类型</h2>
+<h1 id="判断图片类型">判断图片类型</h1>
 <ul>
 <li>给出了一个<code>admin.exe</code>文件，我们需要先判断其文件类型
 <ul>
@@ -1028,7 +1027,7 @@
 </li>
 </ul>
 <hr>
-<h2 id="倒转文件byte">倒转文件byte</h2>
+<h1 id="倒转文件byte">倒转文件byte</h1>
 <ul>
 <li>用<code>binwalk</code>判断文件类型为<code>jpg</code>，于是用<code>GHEX</code>打开</li>
 <li>打开后并没有在开头看见<code>PNG</code>文件头，翻到最下面看见有倒转过来的<code>PNG</code>与<code>IHDR</code>，于是使用脚本将其翻转，得到flag</li>
@@ -1038,7 +1037,7 @@
 </span></span><span class="line"><span class="cl">  <span class="n">b</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;png.png&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span>  <span class="c1">#新建一个名为png.png的图片，写入byte数据</span>
 </span></span><span class="line"><span class="cl">  <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">read</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1">#将flag.jpg图片的byte数据，倒着写入png.png图片里</span>
 </span></span></code></pre></div><hr>
-<h2 id="添加文件头">添加文件头</h2>
+<h1 id="添加文件头">添加文件头</h1>
 <ul>
 <li>先用<code>binwalk</code>判断文件类型为<code>PNG</code>，用<code>GHEX</code>打开</li>
 </ul>
@@ -1049,9 +1048,10 @@
 <li>另存为<code>CTRL + SHIFT + S</code></li>
 </ul>
 <hr>
-<h2 id="修改宽高">修改宽高</h2>
+<h1 id="修改宽高">修改宽高</h1>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">python</span> <span class="n">Deformed</span><span class="o">-</span><span class="n">Image</span><span class="o">-</span><span class="n">Restorer</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">i</span> <span class="n">demo</span><span class="o">.</span><span class="n">png</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><h1 id="lsb图片隐写"><code>LSB</code>图片隐写</h1>
+
         </div>
         
         
@@ -1274,18 +1274,19 @@
         <li><a href="#exp">EXP</a></li>
       </ul>
     </li>
-    <li><a href="#png图片隐写"><code>PNG</code>图片隐写</a>
+    <li><a href="#判断图片类型">判断图片类型</a></li>
+    <li><a href="#倒转文件byte">倒转文件byte</a>
       <ul>
-        <li><a href="#判断类型">判断类型</a></li>
-        <li><a href="#倒转文件byte">倒转文件byte</a>
+        <li>
           <ul>
             <li><a href="#exp-1">EXP</a></li>
           </ul>
         </li>
-        <li><a href="#添加文件头">添加文件头</a></li>
-        <li><a href="#修改宽高">修改宽高</a></li>
       </ul>
     </li>
+    <li><a href="#添加文件头">添加文件头</a></li>
+    <li><a href="#修改宽高">修改宽高</a></li>
+    <li><a href="#lsb图片隐写"><code>LSB</code>图片隐写</a></li>
   </ul>
 </nav>
   </div>
