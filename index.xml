@@ -6,8 +6,15 @@
     <description>Recent content on NGC 2237&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://LuoHuilin3055.github.io/myblog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>随机文章</title>
+      <link>https://LuoHuilin3055.github.io/myblog/random/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://LuoHuilin3055.github.io/myblog/random/</guid>
+      <description>&lt;script&gt;&#xA;  // 文章列表&#xA;  const posts = [&#xA;    &#34;{{ relURL &#34;/posts/从ChatGPT到AI Agent&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/数据结构&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/Linux&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/作业提交指南&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/出游&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/脚本&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/虚拟机配置&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/计算机教育中缺失的一课&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/网安导论&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/网络空间安全概论&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/CTF&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/Kali Linux&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/ex-skills&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/first-post&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/未命名&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/Java学习/蓝桥杯&#34; }}&#34;,&#xA;    &#34;{{ relURL &#34;/posts/Java学习/题目&#34; }}&#34;&#xA;  ];&#xA;  &#xA;  // 随机选择一篇文章&#xA;  const randomPost = posts[Math.floor(Math.random() * posts.length)];&#xA;  &#xA;  // 重定向到随机文章&#xA;  window.location.href = randomPost;&#xA;&lt;/script&gt;&#xA;&lt;p&gt;正在跳转到随机文章&amp;hellip;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>友链</title>
       <link>https://LuoHuilin3055.github.io/myblog/friends/</link>
