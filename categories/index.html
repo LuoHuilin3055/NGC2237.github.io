@@ -438,6 +438,17 @@
       }
     }
     
+    @keyframes growUp {
+      from {
+        height: 0;
+        opacity: 0;
+      }
+      to {
+        height: var(--height);
+        opacity: 1;
+      }
+    }
+    
     .timeline-container {
       max-width: 800px;
       margin: 0 auto;
@@ -691,12 +702,24 @@
           letter-spacing: 2px;
           animation: fadeInDown 0.8s ease;
         ">Categories</h1>
+        <p style="
+          color: #888;
+          font-size: 1.1em;
+          margin: 15px 0 5px;
+          animation: fadeInDown 0.8s ease 0.1s both;
+        ">探索文章的标签世界</p>
+        <p style="
+          color: #666;
+          font-size: 0.9em;
+          margin: 0;
+          animation: fadeInDown 0.8s ease 0.2s both;
+        ">共 0 个标签</p>
         <div style="
           width: 80px;
           height: 3px;
           background: linear-gradient(90deg, #00ffff, transparent);
           margin: 20px auto 0;
-          animation: fadeInDown 0.8s ease 0.2s both;
+          animation: fadeInDown 0.8s ease 0.3s both;
         "></div>
       </div>
       

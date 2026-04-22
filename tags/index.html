@@ -438,6 +438,17 @@
       }
     }
     
+    @keyframes growUp {
+      from {
+        height: 0;
+        opacity: 0;
+      }
+      to {
+        height: var(--height);
+        opacity: 1;
+      }
+    }
+    
     .timeline-container {
       max-width: 800px;
       margin: 0 auto;
@@ -691,74 +702,444 @@
           letter-spacing: 2px;
           animation: fadeInDown 0.8s ease;
         ">Tags</h1>
+        <p style="
+          color: #888;
+          font-size: 1.1em;
+          margin: 15px 0 5px;
+          animation: fadeInDown 0.8s ease 0.1s both;
+        ">探索文章的标签世界</p>
+        <p style="
+          color: #666;
+          font-size: 0.9em;
+          margin: 0;
+          animation: fadeInDown 0.8s ease 0.2s both;
+        ">共 9 个标签</p>
         <div style="
           width: 80px;
           height: 3px;
           background: linear-gradient(90deg, #00ffff, transparent);
           margin: 20px auto 0;
-          animation: fadeInDown 0.8s ease 0.2s both;
+          animation: fadeInDown 0.8s ease 0.3s both;
         "></div>
       </div>
       
       
       
-        <div class="category-cloud">
-          
-          
+        <div style="
+          background: rgba(0,0,0,0.6);
+          border-radius: 20px;
+          border: 1px solid rgba(0,255,255,0.2);
+          padding: 40px;
+          margin-bottom: 60px;
+          animation: fadeInDown 0.8s ease 0.4s both;
+        ">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px;">
+            
+            <div style="flex: 1; min-width: 200px; display: flex; justify-content: center;">
+              <div style="
+                width: 180px;
+                height: 180px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              ">
+                
+                <div style="
+                  width: 100%;
+                  height: 100%;
+                  border: 8px solid rgba(0,255,255,0.2);
+                  border-radius: 50%;
+                  position: absolute;
+                "></div>
+                
+                <div style="
+                  width: 100%;
+                  height: 100%;
+                  border: 8px solid #00ffff;
+                  border-radius: 50%;
+                  position: absolute;
+                  border-top-color: transparent;
+                  border-right-color: transparent;
+                  border-bottom-color: #00ffff;
+                  border-left-color: #00ffff;
+                  transform: rotate(45deg);
+                "></div>
+                
+                <div style="text-align: center;">
+                  <div style="font-size: 2em; font-weight: bold; color: #00ffff;">9</div>
+                  <div style="font-size: 0.9em; color: #888;">个标签</div>
+                </div>
+              </div>
+            </div>
             
             
-            <a href="/myblog/tags/ctf/" style="background: #00ffff; color: #000;">
-              CTF <span>(1)</span>
-            </a>
-          
+            <div style="flex: 2; min-width: 300px;">
+              
+              
+                
+                <div style="display: flex; align-items: flex-end; justify-content: space-around; height: 120px; gap: 10px;">
+                  
+                    
+                    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                      <div style="
+                        width: 100%;
+                        background: linear-gradient(to top, #00ffff, #0066ff);
+                        border-radius: 4px 4px 0 0;
+                        transition: height 1s ease;
+                        animation: growUp 1.5s ease-out 0.5s both;
+                        height: 100px;
+                        min-height: 10px;
+                      "></div>
+                    </div>
+                  
+                    
+                    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                      <div style="
+                        width: 100%;
+                        background: linear-gradient(to top, #00ffff, #0066ff);
+                        border-radius: 4px 4px 0 0;
+                        transition: height 1s ease;
+                        animation: growUp 1.5s ease-out 0.5s both;
+                        height: 100px;
+                        min-height: 10px;
+                      "></div>
+                    </div>
+                  
+                    
+                    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                      <div style="
+                        width: 100%;
+                        background: linear-gradient(to top, #00ffff, #0066ff);
+                        border-radius: 4px 4px 0 0;
+                        transition: height 1s ease;
+                        animation: growUp 1.5s ease-out 0.5s both;
+                        height: 100px;
+                        min-height: 10px;
+                      "></div>
+                    </div>
+                  
+                    
+                    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                      <div style="
+                        width: 100%;
+                        background: linear-gradient(to top, #00ffff, #0066ff);
+                        border-radius: 4px 4px 0 0;
+                        transition: height 1s ease;
+                        animation: growUp 1.5s ease-out 0.5s both;
+                        height: 100px;
+                        min-height: 10px;
+                      "></div>
+                    </div>
+                  
+                    
+                    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                      <div style="
+                        width: 100%;
+                        background: linear-gradient(to top, #00ffff, #0066ff);
+                        border-radius: 4px 4px 0 0;
+                        transition: height 1s ease;
+                        animation: growUp 1.5s ease-out 0.5s both;
+                        height: 100px;
+                        min-height: 10px;
+                      "></div>
+                    </div>
+                  
+                    
+                    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                      <div style="
+                        width: 100%;
+                        background: linear-gradient(to top, #00ffff, #0066ff);
+                        border-radius: 4px 4px 0 0;
+                        transition: height 1s ease;
+                        animation: growUp 1.5s ease-out 0.5s both;
+                        height: 200px;
+                        min-height: 10px;
+                      "></div>
+                    </div>
+                  
+                    
+                    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                      <div style="
+                        width: 100%;
+                        background: linear-gradient(to top, #00ffff, #0066ff);
+                        border-radius: 4px 4px 0 0;
+                        transition: height 1s ease;
+                        animation: growUp 1.5s ease-out 0.5s both;
+                        height: 200px;
+                        min-height: 10px;
+                      "></div>
+                    </div>
+                  
+                    
+                    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                      <div style="
+                        width: 100%;
+                        background: linear-gradient(to top, #00ffff, #0066ff);
+                        border-radius: 4px 4px 0 0;
+                        transition: height 1s ease;
+                        animation: growUp 1.5s ease-out 0.5s both;
+                        height: 300px;
+                        min-height: 10px;
+                      "></div>
+                    </div>
+                  
+                    
+                    <div style="flex: 1; display: flex; flex-direction: column; align-items: center;">
+                      <div style="
+                        width: 100%;
+                        background: linear-gradient(to top, #00ffff, #0066ff);
+                        border-radius: 4px 4px 0 0;
+                        transition: height 1s ease;
+                        animation: growUp 1.5s ease-out 0.5s both;
+                        height: 300px;
+                        min-height: 10px;
+                      "></div>
+                    </div>
+                  
+                </div>
+              
+            </div>
+          </div>
+        </div>
+        
+        
+        <div style="
+          background: rgba(0,0,0,0.6);
+          border-radius: 20px;
+          border: 1px solid rgba(0,255,255,0.2);
+          padding: 30px;
+          animation: fadeInDown 0.8s ease 0.5s both;
+        ">
+          <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
             
             
-            <a href="/myblog/tags/java/" style="background: #00d4ff; color: #000;">
-              Java <span>(1)</span>
-            </a>
-          
+              
+              
+              <a href="/myblog/tags/ctf/" style="
+                display: inline-flex;
+                align-items: center;
+                text-decoration: none;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.9em;
+                color: #000;
+                background: #00ffff;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+              " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 255, 255, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.3)';">
+                CTF <span style="
+                  margin-left: 6px;
+                  font-size: 0.8em;
+                  background: rgba(0,0,0,0.2);
+                  padding: 2px 6px;
+                  border-radius: 10px;
+                  font-weight: bold;
+                ">(1)</span>
+              </a>
             
+              
+              
+              <a href="/myblog/tags/java/" style="
+                display: inline-flex;
+                align-items: center;
+                text-decoration: none;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.9em;
+                color: #000;
+                background: #00d4ff;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+              " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 255, 255, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.3)';">
+                Java <span style="
+                  margin-left: 6px;
+                  font-size: 0.8em;
+                  background: rgba(0,0,0,0.2);
+                  padding: 2px 6px;
+                  border-radius: 10px;
+                  font-weight: bold;
+                ">(1)</span>
+              </a>
             
-            <a href="/myblog/tags/%E5%8F%8B%E9%93%BE/" style="background: #00b8ff; color: #000;">
-              友链 <span>(1)</span>
-            </a>
-          
+              
+              
+              <a href="/myblog/tags/%E5%8F%8B%E9%93%BE/" style="
+                display: inline-flex;
+                align-items: center;
+                text-decoration: none;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.9em;
+                color: #000;
+                background: #00b8ff;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+              " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 255, 255, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.3)';">
+                友链 <span style="
+                  margin-left: 6px;
+                  font-size: 0.8em;
+                  background: rgba(0,0,0,0.2);
+                  padding: 2px 6px;
+                  border-radius: 10px;
+                  font-weight: bold;
+                ">(1)</span>
+              </a>
             
+              
+              
+              <a href="/myblog/tags/%E6%97%A5%E5%BF%97/" style="
+                display: inline-flex;
+                align-items: center;
+                text-decoration: none;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.9em;
+                color: #000;
+                background: #00a8ff;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+              " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 255, 255, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.3)';">
+                日志 <span style="
+                  margin-left: 6px;
+                  font-size: 0.8em;
+                  background: rgba(0,0,0,0.2);
+                  padding: 2px 6px;
+                  border-radius: 10px;
+                  font-weight: bold;
+                ">(1)</span>
+              </a>
             
-            <a href="/myblog/tags/%E6%97%A5%E5%BF%97/" style="background: #00a8ff; color: #000;">
-              日志 <span>(1)</span>
-            </a>
-          
+              
+              
+              <a href="/myblog/tags/%E7%AC%94%E8%AE%B0/" style="
+                display: inline-flex;
+                align-items: center;
+                text-decoration: none;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.9em;
+                color: #000;
+                background: #0096ff;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+              " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 255, 255, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.3)';">
+                笔记 <span style="
+                  margin-left: 6px;
+                  font-size: 0.8em;
+                  background: rgba(0,0,0,0.2);
+                  padding: 2px 6px;
+                  border-radius: 10px;
+                  font-weight: bold;
+                ">(3)</span>
+              </a>
             
+              
+              
+              <a href="/myblog/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="
+                display: inline-flex;
+                align-items: center;
+                text-decoration: none;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.9em;
+                color: #000;
+                background: #0084ff;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+              " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 255, 255, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.3)';">
+                蓝桥杯 <span style="
+                  margin-left: 6px;
+                  font-size: 0.8em;
+                  background: rgba(0,0,0,0.2);
+                  padding: 2px 6px;
+                  border-radius: 10px;
+                  font-weight: bold;
+                ">(2)</span>
+              </a>
             
-            <a href="/myblog/tags/%E7%AC%94%E8%AE%B0/" style="background: #0096ff; color: #000;">
-              笔记 <span>(3)</span>
-            </a>
-          
+              
+              
+              <a href="/myblog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="
+                display: inline-flex;
+                align-items: center;
+                text-decoration: none;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.9em;
+                color: #000;
+                background: #0072ff;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+              " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 255, 255, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.3)';">
+                虚拟机 <span style="
+                  margin-left: 6px;
+                  font-size: 0.8em;
+                  background: rgba(0,0,0,0.2);
+                  padding: 2px 6px;
+                  border-radius: 10px;
+                  font-weight: bold;
+                ">(1)</span>
+              </a>
             
+              
+              
+              <a href="/myblog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="
+                display: inline-flex;
+                align-items: center;
+                text-decoration: none;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.9em;
+                color: #000;
+                background: #0060ff;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+              " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 255, 255, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.3)';">
+                计算机 <span style="
+                  margin-left: 6px;
+                  font-size: 0.8em;
+                  background: rgba(0,0,0,0.2);
+                  padding: 2px 6px;
+                  border-radius: 10px;
+                  font-weight: bold;
+                ">(2)</span>
+              </a>
             
-            <a href="/myblog/tags/%E8%93%9D%E6%A1%A5%E6%9D%AF/" style="background: #0084ff; color: #000;">
-              蓝桥杯 <span>(2)</span>
-            </a>
-          
+              
+              
+              <a href="/myblog/tags/%E9%9A%8F%E7%AC%94/" style="
+                display: inline-flex;
+                align-items: center;
+                text-decoration: none;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 0.9em;
+                color: #000;
+                background: #0048ff;
+                transition: all 0.3s ease;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+              " onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0, 255, 255, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 8px rgba(0, 0, 0, 0.3)';">
+                随笔 <span style="
+                  margin-left: 6px;
+                  font-size: 0.8em;
+                  background: rgba(0,0,0,0.2);
+                  padding: 2px 6px;
+                  border-radius: 10px;
+                  font-weight: bold;
+                ">(3)</span>
+              </a>
             
-            
-            <a href="/myblog/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="background: #0072ff; color: #000;">
-              虚拟机 <span>(1)</span>
-            </a>
-          
-            
-            
-            <a href="/myblog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/" style="background: #0060ff; color: #000;">
-              计算机 <span>(2)</span>
-            </a>
-          
-            
-            
-            <a href="/myblog/tags/%E9%9A%8F%E7%AC%94/" style="background: #0048ff; color: #000;">
-              随笔 <span>(3)</span>
-            </a>
-          
+          </div>
         </div>
       
       
