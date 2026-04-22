@@ -140,22 +140,25 @@
         }
     </style>
     
-    <style>
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script>
+  
+  function busuanziCallback() {
+    
   }
-  body, html {
-    width: 100%;
-    overflow-x: hidden;
-  }
-  .hero-container {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
-</style>
+  
+  
+  window.addEventListener('load', function() {
+    
+    if (typeof busuanzi !== 'undefined') {
+      busuanziCallback();
+    }
+  });
+</script>
+
 </head>
 <body style="background-color: var(--bg-primary); margin: 0; padding: 0;">
     
@@ -1440,7 +1443,7 @@
     margin: 0 auto 15px;
     border: 3px solid #3a5a8c;
   ">
-    <img src="https://LuoHuilin3055.github.io/images/avatar.jpg" alt="Avatar" style="
+    <img src="https://LuoHuilin3055.github.io/images/ChenJM.jpg" alt="Avatar" style="
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -1540,7 +1543,7 @@
     font-size: 0.9em;
     line-height: 1.6;
   ">
-    这个站点最近才重新公开，写作压力其实还挺大的，如果你恰好在看这些更新，请把这里当作一个个人记录空间就好。
+    虽然不知道你是怎么找到我的，但希望我能给你带来收获
   </div>
 </div>
 
@@ -1900,17 +1903,14 @@
     </div>
     
     
-    
     <div style="
       display: flex;
       justify-content: space-between;
       align-items: center;
     ">
       <span style="color: #888; font-size: 0.9em;">本站访客数：</span>
-      <span style="color: #fff; font-size: 0.9em;">115</span>
+      <span id="busuanzi_value_site_uv" style="color: #fff; font-size: 0.9em;">统计中...</span>
     </div>
-    
-    
     
     
     <div style="
@@ -1919,9 +1919,8 @@
       align-items: center;
     ">
       <span style="color: #888; font-size: 0.9em;">本站总浏览量：</span>
-      <span style="color: #fff; font-size: 0.9em;">328</span>
+      <span id="busuanzi_value_site_pv" style="color: #fff; font-size: 0.9em;">统计中...</span>
     </div>
-    
   </div>
 </div>
 
