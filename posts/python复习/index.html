@@ -2,7 +2,7 @@
 <html lang="zh-cn">
 <head>
     <meta charset="utf-8">
-    <title>CTF学习记录 | NGC 2237&#39;s Blog</title>
+    <title>Python复习 | NGC 2237&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -884,7 +884,7 @@
   
   
   <div style="
-    background-image: url('https://LuoHuilin3055.github.io/myblog/images/10.jpg');
+    background-image: url('https://LuoHuilin3055.github.io/myblog/image/12.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -916,8 +916,8 @@
           border-radius: 15px 15px 0 0;
         ">
           <img 
-            src="https://LuoHuilin3055.github.io/myblog/images/10.jpg"
-            alt="CTF学习记录"
+            src="https://LuoHuilin3055.github.io/myblog/image/12.png"
+            alt="Python复习"
             loading="eager"
             decoding="async"
             style="
@@ -941,13 +941,13 @@
         </div>
         
         
-        <h1 style="color: #00ffff; font-size: clamp(2em, 5vw, 2.5em); margin: -20px 0 20px; text-shadow: 0 0 10px rgba(0,255,255,0.3); animation: fadeIn 0.8s ease;">CTF学习记录</h1>
+        <h1 style="color: #00ffff; font-size: clamp(2em, 5vw, 2.5em); margin: -20px 0 20px; text-shadow: 0 0 10px rgba(0,255,255,0.3); animation: fadeIn 0.8s ease;">Python复习</h1>
         
         <div style="color: #ccc; margin: 20px 0; display: flex; gap: 20px; flex-wrap: wrap; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
-          <span>📅 2026-04-02</span>
+          <span>📅 2026-04-23</span>
           
-          <span>📝 119 字</span>
-          <span>⏱️ 1 分钟</span>
+          <span>📝 318 字</span>
+          <span>⏱️ 2 分钟</span>
         </div>
         
         
@@ -957,7 +957,7 @@
   
     
     
-    <a href="/myblog/tags/ctf" 
+    <a href="/myblog/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA" 
        style="
          display: inline-flex;
          align-items: center;
@@ -973,7 +973,7 @@
        "
        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.3)'"
        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0, 0, 0, 0.2)'">
-      CTF
+      计算机
     </a>
   
     
@@ -1018,76 +1018,261 @@
       大一下
     </a>
   
+    
+    
+    <a href="/myblog/tags/python" 
+       style="
+         display: inline-flex;
+         align-items: center;
+         padding: 6px 14px;
+         background: #ffb86c;
+         border-radius: 18px;
+         color: #000;
+         font-size: 0.85em;
+         font-weight: 500;
+         text-decoration: none;
+         transition: all 0.2s ease;
+         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+       "
+       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.3)'"
+       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0, 0, 0, 0.2)'">
+      Python
+    </a>
+  
 </div>
 
 
         
         <div class="article-content" style="color: #fff; line-height: 1.8; margin-top: 30px;">
-          <h1 id="2018-defcon-quals-ghettohackers-throwback">2018 DEFCON Quals ghettohackers: Throwback</h1>
-<h2 id="题目描述">题目描述</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Anyo!e!howouldsacrificepo!icyforexecu!!onspeedthink!securityisacomm!ditytop!urintoasy!tem!
-</span></span></code></pre></div><h2 id="思路">思路</h2>
-<ul>
-<li>一种方法是补全叹号内容得到flag
-<ul>
-<li><code>flag{Anyone who would sacrifice policy for execution speed thinks security is a commodity to pour into a system}</code></li>
-<li>或者<code>flag{nwltisoos}</code></li>
-<li>但都是错的</li>
-</ul>
-</li>
-<li>另一种则是以<code>!</code>为分割点将字符分开，字符串长度对应字母表中字母的顺序，同时假设0个字符为空格</li>
-</ul>
-<h2 id="exp">EXP</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">ori</span> <span class="o">=</span> <span class="s1">&#39;Anyo!e!howouldsacrificepo!icyforexecu!!onspeedthink!securityisacomm!ditytop!urintoasy!tem!&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="n">sp</span> <span class="o">=</span> <span class="n">ori</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;!&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mi">97</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sp</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-</span></span></code></pre></div><p><code>flag{dark logic}</code></p>
+          <p>那我就不跟你“速成带过”了，直接给你一份**“零基础也能看懂的完整复习资料”**，你可以直接发给你同学用（甚至当讲义）。</p>
+<p>我会按<strong>从0开始 → 考试能用</strong>来写，尽量通俗、不假设任何基础。</p>
 <hr>
-<h1 id="判断图片类型">判断图片类型</h1>
+<h1 id="-python期中复习讲义零基础版">📘 Python期中复习讲义（零基础版）</h1>
+<h2 id="一python到底是什么先建立概念">一、Python到底是什么（先建立概念）</h2>
+<p>Python就是一种“写给电脑看的语言”，用来做三件事：</p>
 <ul>
-<li>给出了一个<code>admin.exe</code>文件，我们需要先判断其文件类型
-<ul>
-<li>先用<code>binwalk</code>判断<code>binwalk admin.exe</code>得出为<code>png</code>文件</li>
-<li>再使用<code>GHEX</code>来进行十六进制验证<code>ghex admin.exe</code>,得到<code>89 50 4E 47 0D 0A 1A 0A</code>的<code>PNG</code>文件头</li>
-</ul>
+<li>
+<p>计算（比如算土地面积）</p>
 </li>
-<li>于是我们将后缀改为<code>PNG</code>，得到一张二维码，用<code>QRCode</code>扫描即可得到flag
-<ul>
-<li><code>mv admin.exe admin.png</code></li>
-</ul>
+<li>
+<p>判断（是否符合条件）</p>
+</li>
+<li>
+<p>处理数据（比如一堆地块信息）</p>
 </li>
 </ul>
+<p>👉 你考试就是：<strong>让电脑帮你处理数据</strong></p>
 <hr>
-<h1 id="倒转文件byte">倒转文件byte</h1>
-<ul>
-<li>用<code>binwalk</code>判断文件类型为<code>jpg</code>，于是用<code>GHEX</code>打开</li>
-<li>打开后并没有在开头看见<code>PNG</code>文件头，翻到最下面看见有倒转过来的<code>PNG</code>与<code>IHDR</code>，于是使用脚本将其翻转，得到flag</li>
-</ul>
-<h3 id="exp-1">EXP</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl">  <span class="n">a</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;flag.jpg&#39;</span><span class="p">,</span><span class="s1">&#39;rb&#39;</span><span class="p">)</span>  <span class="c1">#读取flag.jpg图片的byte数据</span>
-</span></span><span class="line"><span class="cl">  <span class="n">b</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;png.png&#39;</span><span class="p">,</span><span class="s1">&#39;wb&#39;</span><span class="p">)</span>  <span class="c1">#新建一个名为png.png的图片，写入byte数据</span>
-</span></span><span class="line"><span class="cl">  <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">read</span><span class="p">()[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1">#将flag.jpg图片的byte数据，倒着写入png.png图片里</span>
+<h1 id="二最基础输入--输出">二、最基础：输入 + 输出</h1>
+<h2 id="1-输出print">1️⃣ 输出（print）</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;你好&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>👉 作用：把内容显示出来</p>
+<hr>
+<h2 id="2-输入input">2️⃣ 输入（input）</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;请输入名字：&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>👉 作用：让用户输入内容</p>
+<hr>
+<h2 id="-注意必考坑">⚠️ 注意（必考坑）</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;请输入年龄：&#34;</span><span class="p">))</span>
+</span></span></code></pre></div><p>👉 input 默认是“字符串”，要用 <code>int()</code> 变成数字！</p>
+<hr>
+<h1 id="三变量就是存东西的盒子">三、变量（就是“存东西的盒子”）</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">area</span> <span class="o">=</span> <span class="mi">100</span>
+</span></span></code></pre></div><p>👉 意思：把 100 存进变量 area</p>
+<hr>
+<p>可以随便改：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">area</span> <span class="o">=</span> <span class="mi">200</span>
 </span></span></code></pre></div><hr>
-<h1 id="添加文件头">添加文件头</h1>
+<h1 id="四判断if">四、判断（if）</h1>
+<h2 id="基本结构">基本结构：</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">条件</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">做事情</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">做另一件事</span>
+</span></span></code></pre></div><hr>
+<h2 id="示例">示例：</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">area</span> <span class="o">=</span> <span class="mi">120</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">area</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;大地块&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;小地块&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><hr>
+<h2 id="常用比较符号必须记">常用比较符号（必须记）</h2>
+<table>
+  <thead>
+      <tr>
+          <th>符号</th>
+          <th>意义</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&gt;</td>
+          <td>大于</td>
+      </tr>
+      <tr>
+          <td>&lt;</td>
+          <td>小于</td>
+      </tr>
+      <tr>
+          <td>&gt;=</td>
+          <td>大于等于</td>
+      </tr>
+      <tr>
+          <td>==</td>
+          <td>等于</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h1 id="五循环for让代码重复执行">五、循环（for）——让代码重复执行</h1>
+<h2 id="1-基本循环">1️⃣ 基本循环</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span></code></pre></div><p>👉 输出：0 1 2 3 4</p>
+<hr>
+<h2 id="2-遍历数据考试重点">2️⃣ 遍历数据（考试重点）</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">areas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span></code></pre></div><p>👉 一个一个取出来</p>
+<hr>
+<h1 id="六列表最重要">六、列表（最重要！！）</h1>
+<p>👉 列表 = 一堆数据</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+</span></span></code></pre></div><hr>
+<h2 id="常见操作">常见操作</h2>
+<h3 id="1-求和">1️⃣ 求和</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">sum</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span>
+</span></span></code></pre></div><hr>
+<h3 id="2-最大值">2️⃣ 最大值</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">max</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span>
+</span></span></code></pre></div><hr>
+<h3 id="3-个数">3️⃣ 个数</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">len</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span>
+</span></span></code></pre></div><hr>
+<h2 id="-综合例子很像考试题">⭐ 综合例子（很像考试题）</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">avg</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;平均值：&#34;</span><span class="p">,</span> <span class="n">avg</span><span class="p">)</span>
+</span></span></code></pre></div><hr>
+<h1 id="七条件筛选重点中的重点">七、条件筛选（重点中的重点）</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">areas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">120</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span></code></pre></div><p>👉 输出：大于120的地块</p>
+<hr>
+<h1 id="八字典稍微进阶但常考">八、字典（稍微进阶，但常考）</h1>
+<p>👉 用来存“名称 + 数据”</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">land</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;A地块&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;B地块&#34;</span><span class="p">:</span> <span class="mi">200</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><hr>
+<h2 id="取值">取值</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="s2">&#34;A地块&#34;</span><span class="p">])</span>
+</span></span></code></pre></div><hr>
+<h1 id="九文件读取很可能考">九、文件读取（很可能考）</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;data.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span></code></pre></div><p>👉 一行一行读</p>
+<hr>
+<h1 id="十考试最常见题型直接练这个">十、考试最常见题型（直接练这个）</h1>
+<h2 id="题型1求平均值">⭐题型1：求平均值</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">avg</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">avg</span><span class="p">)</span>
+</span></span></code></pre></div><hr>
+<h2 id="题型2找最大值">⭐题型2：找最大值</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">areas</span><span class="p">))</span>
+</span></span></code></pre></div><hr>
+<h2 id="题型3筛选数据">⭐题型3：筛选数据</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">areas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">120</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span></code></pre></div><hr>
+<h2 id="题型4统计数量">⭐题型4：统计数量</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">areas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">120</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+</span></span></code></pre></div><hr>
+<h1 id="十一超级保命模板考前背这个">十一、超级保命模板（考前背这个）</h1>
+<p>直接背👇</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">avg</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">avg</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;平均值：&#34;</span><span class="p">,</span> <span class="n">avg</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;数量：&#34;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+</span></span></code></pre></div><p>👉 能覆盖：</p>
 <ul>
-<li>先用<code>binwalk</code>判断文件类型为<code>PNG</code>，用<code>GHEX</code>打开</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">binwalk no_hex
-</span></span><span class="line"><span class="cl">ghex no_hex
-</span></span></code></pre></div><ul>
-<li>打开后发现文件头缺失，<code>INS</code> -&gt; 添加<code>89 50 4E 47</code></li>
-<li>另存为<code>CTRL + SHIFT + S</code></li>
+<li>
+<p>循环</p>
+</li>
+<li>
+<p>判断</p>
+</li>
+<li>
+<p>平均值</p>
+</li>
+<li>
+<p>统计</p>
+</li>
 </ul>
 <hr>
-<h1 id="修改宽高">修改宽高</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">python</span> <span class="n">Deformed</span><span class="o">-</span><span class="n">Image</span><span class="o">-</span><span class="n">Restorer</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">i</span> <span class="n">demo</span><span class="o">.</span><span class="n">png</span>
-</span></span></code></pre></div><h1 id="lsb图片隐写"><code>LSB</code>图片隐写</h1>
-<h2 id="前言">前言：</h2>
-<p>作为一个不是十分勤奋的仍在入门苦苦挣扎的<code>CTFer</code>，之前做了几道<code>Misc</code>的图片题（因为简单），我的操作仅限于“打开随波逐流 &ndash;&gt; 图片及文件隐写 &ndash;&gt; <code>binwalk</code>文件提取”，最多延伸到用<code>010</code>打开修改文件头，这学期决定真的真的真的要入门<code>CTF</code>了，现在准备学一下之前看见就跑的<code>LSB</code>隐写题<br>
-另外，本来是想下载<code>Stegsolve</code>的，但我的能力有限，下载的全是精简版，<code>ChatGPT</code>教我的很多功能都找不到，放弃后又去询问<code>ChatGPT</code>，决定试试<code>zsteg → StegoVeritas → StegOnline（最后确认）</code>这样的流程<br>
-<del>我总觉得我记性不是很好，所以我总是写的比较哆嗦</del></p>
-<h2></h2>
+<h1 id="十二你同学最容易挂的点重点提醒他">十二、你同学最容易挂的点（重点提醒他）</h1>
+<p>❌ 忘记缩进（Python必须缩进！）</p>
+<p>❌ input 没加 int()</p>
+<p>❌ if 写成 =<br>
+（必须是 <code>==</code>）</p>
+<p>❌ 循环不会写<br>
+👉 就背 <code>for a in data:</code></p>
+<hr>
+<h1 id="十三最后的实战建议">十三、最后的实战建议</h1>
+<p>👉 别让他看太多视频，<strong>直接做这3件事：</strong></p>
+<ol>
+<li>
+<p>把上面代码全部敲一遍</p>
+</li>
+<li>
+<p>改数字再跑一遍</p>
+</li>
+<li>
+<p>把“保命模板”背下来</p>
+</li>
+</ol>
+<hr>
 
         </div>
         
@@ -1100,7 +1285,7 @@
     <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
       <span style="color: #888; font-size: 0.9em;">标签：</span>
       
-        <a href="https://LuoHuilin3055.github.io/tags/ctf" 
+        <a href="https://LuoHuilin3055.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA" 
            style="
              padding: 6px 14px;
              background: rgba(0, 255, 255, 0.15);
@@ -1113,7 +1298,7 @@
            "
            onmouseover="this.style.background='rgba(0, 255, 255, 0.3)'; this.style.transform='translateY(-2px)'"
            onmouseout="this.style.background='rgba(0, 255, 255, 0.15)'; this.style.transform='translateY(0)'">
-          CTF
+          计算机
         </a>
       
         <a href="https://LuoHuilin3055.github.io/tags/%E7%AC%94%E8%AE%B0" 
@@ -1148,6 +1333,22 @@
           大一下
         </a>
       
+        <a href="https://LuoHuilin3055.github.io/tags/python" 
+           style="
+             padding: 6px 14px;
+             background: rgba(0, 255, 255, 0.15);
+             border: 1px solid rgba(0, 255, 255, 0.4);
+             border-radius: 20px;
+             color: #00ffff;
+             font-size: 0.9em;
+             text-decoration: none;
+             transition: all 0.3s ease;
+           "
+           onmouseover="this.style.background='rgba(0, 255, 255, 0.3)'; this.style.transform='translateY(-2px)'"
+           onmouseout="this.style.background='rgba(0, 255, 255, 0.15)'; this.style.transform='translateY(0)'">
+          Python
+        </a>
+      
     </div>
     
   </div>
@@ -1155,7 +1356,7 @@
   
   <div style="display: flex; gap: 10px;">
     <span style="color: #888; font-size: 0.9em;">分享：</span>
-    <a href="https://twitter.com/intent/tweet?text=CTF%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95&url=https%3a%2f%2fLuoHuilin3055.github.io%2fmyblog%2fposts%2fctf%2f" 
+    <a href="https://twitter.com/intent/tweet?text=Python%e5%a4%8d%e4%b9%a0&url=https%3a%2f%2fLuoHuilin3055.github.io%2fmyblog%2fposts%2fpython%25E5%25A4%258D%25E4%25B9%25A0%2f" 
        target="_blank"
        style="
          padding: 6px 12px;
@@ -1168,7 +1369,7 @@
        "
        onmouseover="this.style.opacity='0.8'"
        onmouseout="this.style.opacity='1'">Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fLuoHuilin3055.github.io%2fmyblog%2fposts%2fctf%2f" 
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fLuoHuilin3055.github.io%2fmyblog%2fposts%2fpython%25E5%25A4%258D%25E4%25B9%25A0%2f" 
        target="_blank"
        style="
          padding: 6px 12px;
@@ -1189,7 +1390,7 @@
 <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid #333;">
   <div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
     
-    <a href="/myblog/posts/java%E5%AD%A6%E4%B9%A0/%E8%93%9D%E6%A1%A5%E6%9D%AF/" 
+    <a href="/myblog/posts/%E5%87%BA%E6%B8%B8/" 
        style="
          flex: 1;
          min-width: 200px;
@@ -1204,29 +1405,12 @@
        onmouseover="this.style.borderColor='#00ffff'; this.style.background='rgba(0,255,255,0.1)'"
        onmouseout="this.style.borderColor='#333'; this.style.background='rgba(0,0,0,0.5)'">
       <div style="font-size: 0.8em; color: #888; margin-bottom: 5px;">← 上一篇</div>
-      <div style="font-weight: bold; color: #00ffff;">Java蓝桥杯备赛记录</div>
+      <div style="font-weight: bold; color: #00ffff;">与cdx的出游计划</div>
     </a>
     
     
     
-    <a href="/myblog/posts/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%85%8D%E7%BD%AE/" 
-       style="
-         flex: 1;
-         min-width: 200px;
-         padding: 15px 20px;
-         background: rgba(0,0,0,0.5);
-         border: 1px solid #333;
-         border-radius: 10px;
-         color: #fff;
-         text-decoration: none;
-         text-align: right;
-         transition: all 0.3s ease;
-       "
-       onmouseover="this.style.borderColor='#00ffff'; this.style.background='rgba(0,255,255,0.1)'"
-       onmouseout="this.style.borderColor='#333'; this.style.background='rgba(0,0,0,0.5)'">
-      <div style="font-size: 0.8em; color: #888; margin-bottom: 5px;">下一篇 →</div>
-      <div style="font-weight: bold; color: #00ffff;">虚拟机配置</div>
-    </a>
+    <div style="flex: 1; min-width: 200px;"></div>
     
   </div>
 </div>
@@ -1313,38 +1497,69 @@
           font-size: 1em;
           transition: all 0.3s ease;
         " onmouseover="this.style.color='#fff'; this.style.paddingLeft='8px'" onmouseout="this.style.color='#00ffff'; this.style.paddingLeft='0'">
-          CTF学习记录
+          Python复习
         </a>
       </li>
     </ul>
     
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#2018-defcon-quals-ghettohackers-throwback">2018 DEFCON Quals ghettohackers: Throwback</a>
+    <li><a href="#-python期中复习讲义零基础版">📘 Python期中复习讲义（零基础版）</a>
       <ul>
-        <li><a href="#题目描述">题目描述</a></li>
-        <li><a href="#思路">思路</a></li>
-        <li><a href="#exp">EXP</a></li>
+        <li><a href="#一python到底是什么先建立概念">一、Python到底是什么（先建立概念）</a></li>
       </ul>
     </li>
-    <li><a href="#判断图片类型">判断图片类型</a></li>
-    <li><a href="#倒转文件byte">倒转文件byte</a>
+    <li><a href="#二最基础输入--输出">二、最基础：输入 + 输出</a>
       <ul>
-        <li>
+        <li><a href="#1-输出print">1️⃣ 输出（print）</a></li>
+        <li><a href="#2-输入input">2️⃣ 输入（input）</a></li>
+        <li><a href="#-注意必考坑">⚠️ 注意（必考坑）</a></li>
+      </ul>
+    </li>
+    <li><a href="#三变量就是存东西的盒子">三、变量（就是“存东西的盒子”）</a></li>
+    <li><a href="#四判断if">四、判断（if）</a>
+      <ul>
+        <li><a href="#基本结构">基本结构：</a></li>
+        <li><a href="#示例">示例：</a></li>
+        <li><a href="#常用比较符号必须记">常用比较符号（必须记）</a></li>
+      </ul>
+    </li>
+    <li><a href="#五循环for让代码重复执行">五、循环（for）——让代码重复执行</a>
+      <ul>
+        <li><a href="#1-基本循环">1️⃣ 基本循环</a></li>
+        <li><a href="#2-遍历数据考试重点">2️⃣ 遍历数据（考试重点）</a></li>
+      </ul>
+    </li>
+    <li><a href="#六列表最重要">六、列表（最重要！！）</a>
+      <ul>
+        <li><a href="#常见操作">常见操作</a>
           <ul>
-            <li><a href="#exp-1">EXP</a></li>
+            <li><a href="#1-求和">1️⃣ 求和</a></li>
+            <li><a href="#2-最大值">2️⃣ 最大值</a></li>
+            <li><a href="#3-个数">3️⃣ 个数</a></li>
           </ul>
         </li>
+        <li><a href="#-综合例子很像考试题">⭐ 综合例子（很像考试题）</a></li>
       </ul>
     </li>
-    <li><a href="#添加文件头">添加文件头</a></li>
-    <li><a href="#修改宽高">修改宽高</a></li>
-    <li><a href="#lsb图片隐写"><code>LSB</code>图片隐写</a>
+    <li><a href="#七条件筛选重点中的重点">七、条件筛选（重点中的重点）</a></li>
+    <li><a href="#八字典稍微进阶但常考">八、字典（稍微进阶，但常考）</a>
       <ul>
-        <li><a href="#前言">前言：</a></li>
-        <li></li>
+        <li><a href="#取值">取值</a></li>
       </ul>
     </li>
+    <li><a href="#九文件读取很可能考">九、文件读取（很可能考）</a></li>
+    <li><a href="#十考试最常见题型直接练这个">十、考试最常见题型（直接练这个）</a>
+      <ul>
+        <li><a href="#题型1求平均值">⭐题型1：求平均值</a></li>
+        <li><a href="#题型2找最大值">⭐题型2：找最大值</a></li>
+        <li><a href="#题型3筛选数据">⭐题型3：筛选数据</a></li>
+        <li><a href="#题型4统计数量">⭐题型4：统计数量</a></li>
+      </ul>
+    </li>
+    <li><a href="#十一超级保命模板考前背这个">十一、超级保命模板（考前背这个）</a></li>
+    <li><a href="#十二你同学最容易挂的点重点提醒他">十二、你同学最容易挂的点（重点提醒他）</a></li>
+    <li><a href="#十三最后的实战建议">十三、最后的实战建议</a></li>
   </ul>
 </nav>
   </div>

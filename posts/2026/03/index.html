@@ -275,6 +275,14 @@
   const searchData = [
     
     {
+      title: "Python复习",
+      url: "https:\/\/LuoHuilin3055.github.io\/myblog\/posts\/python%E5%A4%8D%E4%B9%A0\/",
+      content: "那我就不跟你“速成带过”了，直接给你一份**“零基础也能看懂的完整复习资料”**，你可以直接发给你同学用（甚至当讲义）。\n我会按从0开始 → 考试能用来写，尽量通俗、不假设任何基础。\n📘 Python期中复习讲义（零基础版） 一、Python到底是什么（先建立概念） Python就是一种“写给电脑看的语言”，用来做三件事：\n计算（比如算土地面积）\n判断（是否符合条件）\n处理数据（比如一堆地块信息） …",
+      date: "2026-04-23",
+      tags: [ "计算机",  "笔记",  "大一下",  "Python", ]
+    },
+    
+    {
       title: "随机文章",
       url: "https:\/\/LuoHuilin3055.github.io\/myblog\/random\/",
       content: "正在跳转到随机文章\u0026hellip;\n",
@@ -441,78 +449,153 @@
       }
     }
     
-    .archive-container {
-      max-width: 1000px;
+    .timeline-container {
+      max-width: 800px;
       margin: 0 auto;
+      position: relative;
     }
     
-    .archive-header {
-      text-align: center;
-      margin-bottom: 50px;
+    .timeline-header {
+      margin-bottom: 40px;
+      animation: fadeInDown 0.8s ease;
     }
     
-    .archive-header h1 {
+    .timeline-header h2 {
       color: #00ffff;
-      font-size: 2.5em;
+      font-size: 1.5em;
       margin: 0 0 10px;
-      text-shadow: 0 0 20px rgba(0,255,255,0.5);
     }
     
-    .archive-header span {
+    .timeline-header span {
       color: #888;
-      font-size: 1em;
+      font-size: 0.9em;
     }
     
-    .archive-list {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+    .timeline {
+      position: relative;
+      padding-left: 30px;
     }
     
-    .archive-item {
-      display: flex;
-      align-items: center;
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #00ffff, transparent);
+    }
+    
+    .timeline-year {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    
+    .timeline-year::before {
+      content: '';
+      position: absolute;
+      left: -30px;
+      top: 6px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #00ffff;
+      box-shadow: 0 0 10px rgba(0,255,255,0.5);
+    }
+    
+    .timeline-year h3 {
+      color: #00ffff;
+      font-size: 1.2em;
+      margin: 0 0 20px;
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 20px;
       padding: 20px;
       background: rgba(0,0,0,0.6);
-      border-radius: 12px;
+      border-radius: 8px;
       border: 1px solid rgba(0,255,255,0.2);
       transition: all 0.3s ease;
-      text-decoration: none;
+      display: flex;
+      gap: 20px;
     }
     
-    .archive-item:hover {
+    .timeline-item:hover {
       background: rgba(0,255,255,0.05);
       transform: translateX(10px);
       box-shadow: 0 4px 15px rgba(0,255,255,0.3);
-      border-color: #00ffff;
     }
     
-    .archive-item-date {
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -36px;
+      top: 28px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #00ffff;
+    }
+    
+    .timeline-item-image {
       flex-shrink: 0;
-      width: 80px;
-      color: #00ffff;
-      font-size: 0.9em;
-      font-weight: 500;
+      width: 100px;
+      height: 60px;
+      border-radius: 6px;
+      overflow: hidden;
     }
     
-    .archive-item-title {
+    .timeline-item-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .timeline-item:hover .timeline-item-image img {
+      transform: scale(1.1);
+    }
+    
+    .timeline-item-content {
       flex: 1;
+    }
+    
+    .timeline-item-date {
+      color: #888;
+      font-size: 0.8em;
+      margin-bottom: 8px;
+    }
+    
+    .timeline-item-title {
       color: #fff;
       font-size: 1.1em;
+      margin: 0 0 10px;
     }
     
-    .archive-item-tags {
+    .timeline-item-title a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .timeline-item-title a:hover {
+      color: #00ffff;
+    }
+    
+    .timeline-tags {
       display: flex;
-      gap: 8px;
+      gap: 6px;
       flex-wrap: wrap;
     }
     
-    .archive-tag {
-      font-size: 0.75em;
+    .timeline-tag {
+      font-size: 0.7em;
       color: #00ffff;
       background: rgba(0,255,255,0.1);
-      padding: 3px 10px;
-      border-radius: 12px;
+      padding: 2px 8px;
+      border-radius: 10px;
     }
   </style>
   
@@ -524,7 +607,7 @@
     min-height: 100vh;
     padding: 120px 20px 60px;
     position: relative;
-  ">
+  " id="page-top">
     
     <div style="
       position: absolute;
@@ -536,33 +619,51 @@
       z-index: 0;
     "></div>
     
-    <div style="max-width: 1000px; margin: 0 auto; position: relative; z-index: 1;">
+    <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
       
-      <div class="archive-header" style="animation: fadeInDown 0.8s ease;">
-        <h1>2026年3月归档</h1>
-        <span>共 0 篇文章</span>
-      </div>
-      
-      
-      <div class="archive-list">
-        
-      </div>
-      
-      
-      <div style="text-align: center; margin-top: 50px;">
-        <a href="/posts/" style="
-          display: inline-block;
-          padding: 12px 30px;
-          background: rgba(0,255,255,0.1);
+      <div style="text-align: center; margin-bottom: 60px;">
+        <h1 style="
+          font-size: clamp(2.5em, 6vw, 3.5em);
           color: #00ffff;
-          text-decoration: none;
-          border-radius: 25px;
-          border: 1px solid rgba(0,255,255,0.3);
-          transition: all 0.3s ease;
-        " onmouseover="this.style.background='rgba(0,255,255,0.2)'" onmouseout="this.style.background='rgba(0,255,255,0.1)'">
-          返回文章列表
-        </a>
+          margin: 0;
+          text-shadow: 0 0 20px rgba(0,255,255,0.5);
+          letter-spacing: 2px;
+          animation: fadeInDown 0.8s ease;
+        ">2026年3月归档</h1>
+        <div style="
+          width: 80px;
+          height: 3px;
+          background: linear-gradient(90deg, #00ffff, transparent);
+          margin: 20px auto 0;
+          animation: fadeInDown 0.8s ease 0.2s both;
+        "></div>
       </div>
+      
+      
+      
+        
+        <div style="
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          gap: 30px;
+        ">
+          
+        </div>
+      
+      
+      
+      
+      <div style="
+        text-align: center;
+        padding: 80px 20px;
+        color: #666;
+        background: rgba(0,0,0,0.5);
+        border-radius: 16px;
+        border: 1px solid #333;
+      ">
+        <p style="font-size: 1.2em;">暂无文章，敬请期待...</p>
+      </div>
+      
     </div>
   </div>
 
