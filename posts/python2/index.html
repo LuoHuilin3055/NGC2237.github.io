@@ -5,165 +5,125 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title> | NGC 2237&#39;s Blog</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="网络空间安全概述
+    <meta name="description" content="了解了，既然考试就在下午，时间非常紧张，我马上帮你整理一个最简明、直接可用的复习资料，这份资料重点是能直接应用，帮你同学在考试中拿到基本分数。
+这里是重点回顾 &#43; 必背模板，你只需要快速过一遍，确保能写出来，就可以应付大部分题目了。
 
-网络空间安全概念演变
-
-  阶段1: 通信保密 ──→ 阶段2: 计算机安全 ──→ 阶段3: 信息系统安全 ──→ 阶段4: 网络空间安全
-(古典密码)          (1970s COMPUSEC)     (1990s INFOSEC)     (21世纪 第五大空间)
-    │                   │                        │                       │
-    ▼                   ▼                        ▼                       ▼
-  数据加密            DES/TCSEC                互联网安全            全方位国家安全
-
-网络空间安全基本属性
+⚡️ 最后复习：Python考试速战速决版 ⚡️
+一、基本概念与写法（必背）
+1️⃣ 输出和输入
 
 
-
-  
-      
-          攻击形式
-          对应安全属性
-          说明
-      
-  
-  
-      
-          偷看/窃听
-          机密性(C)
-          防止信息泄露
-      
-      
-          篡改/删节
-          完整性(I)
-          防止数据被修改
-      
-      
-          拦截/中断
-          可用性(A)
-          确保系统正常运行
-      
-      
-          重放攻击
-          真实性
-          防止信息被重复利用
-      
-      
-          伪装/冒充
-          实体真实性
-          身份鉴别
-      
-      
-          否认发送
-          不可否认性
-          防止抵赖行为
-      
-  
+输出：print(&quot;内容&quot;)
 
 
+输入：变量 = input(&quot;提示信息&quot;)
 
 
-安全服务与安全机制（ISO 7498-2)
+print(&#34;请输入数字：&#34;)
+num = input()
+print(&#34;你输入的是：&#34;, num)
+2️⃣ 变量
+变量是存储数据的地方：
+a = 5  # 变量a存储5
+
+二、条件判断（if语句）（常见题）
+基本结构
+if 条件:
+    执行的代码
+else:
+    另一种情况执行的代码
+示例：判断成绩
+score = int(input(&#34;请输入成绩：&#34;))
+if score &gt;= 60:
+    print(&#34;及格&#34;)
+else:
+    print(&#34;不及格&#34;)
+
+三、循环（for语句）（必考，简单）
+基本结构：
+for 变量 in 范围：
+    执行的代码
+例子：打印数字
+for i in range(5):  # 打印 0, 1, 2, 3, 4
+    print(i)
+
+四、列表操作（常考）
+列表存储一堆数据：
+areas = [100, 200, 150, 300]
+常用操作：
 
 
-
-  
-      
-          安全服务
-          核心功能
-      
-  
-  
-      
-          鉴别
-          对等实体鉴别、数据原发鉴别
-      
-      
-          访问控制
-          控制实体对资源的访问权限
-      
-      
-          数据完整性
-          防止信息遭受篡改等破坏
-      
-      
-          数据保密性
-          使数据不被非授权泄露
-      
-      
-          抗抵赖/不可否认
-          原发抗抵赖、接收抗抵赖
-      
-  
+求和：sum(areas)
 
 
+最大值：max(areas)
 
 
+个数：len(areas)
 
 
-传统密码
+例子：求平均值
+total = sum(areas)
+avg = total / len(areas)
+print(&#34;平均值：&#34;, avg)
 
-什么是密码学
+五、条件筛选（最常考）
+筛选列表中的数据：
+for a in areas:
+    if a &gt; 150:
+        print(a)  # 输出大于150的值
 
-密码学是研究密码系统或通信安全的一门学科，分为密码编码学和密码分析学
-密码编码学：研究如何对信息编码以实现信息和通信安全
-密码分析学/密码破译学：研究如何破译或攻击受保护信息
+六、字典（数据存储）（有时候考）
+字典存储“键：值”对：
+land = {&#34;A地块&#34;: 100, &#34;B地块&#34;: 200}
+获取值：
+print(land[&#34;A地块&#34;])  # 输出 100
+
+七、文件读取（如果涉及，基本这么写）
+file = open(&#34;data.txt&#34;, &#34;r&#34;)  # 打开文件
+for line in file:
+    print(line)  # 输出每一行
+file.close()  # 关闭文件
+
+八、考试常见题型（直接套用）
+1. 计算平均值
+areas = [100, 200, 150, 80]
+total = sum(areas)
+avg = total / len(areas)
+print(&#34;平均值：&#34;, avg)
+2. 计算最大值
+print(max(areas))  # 输出最大值
+3. 筛选大于某个值的数据
+for a in areas:
+    if a &gt; 150:
+        print(a)  # 输出大于150的地块
+4. 条件统计数量
+count = 0
+for a in areas:
+    if a &gt; 150:
+        count &#43;= 1
+print(count)  # 输出大于150的地块数量
+
+九、必背模板（考试中用）
+全能模板：
+areas = [100, 200, 150, 80]
+
+# 计算总和和平均值
+total = sum(areas)
+avg = total / len(areas)
+
+# 输出大于平均值的地块
+for a in areas:
+    if a &gt; avg:
+        print(a)
+
+# 输出平均值
+print(&#34;平均值：&#34;, avg)
+
+十、小贴士（临时救命）
 
 
-
-传统密码
-
-主要特点：数据的安全基于算法的保密
-
-
-  
-      
-          分类层级
-          名称
-          包含的具体算法/子类
-          文档说明
-      
-  
-  
-      
-          一级分类
-          传统密码
-          1. 代换密码  2. 置换密码
-          传统密码主要分为这两大类。
-      
-      
-          二级分类
-          代换密码  (Substitution)
-          单表代换：  • 棋盘密码  • 凯撒密码 (Caesar)  • 移位密码  • 替换密码 (Simple Substitution)    多表代换：  • Vigenère (维吉尼亚) 密码    多字母代换：  • Hill (希尔) 密码
-          明文中的字符被替换成密文中的另一个字符。
-      
-      
-          二级分类
-          置换密码  (Permutation)
-          • 滚筒密码 (Scytale)  • 栅栏技术 (Rail-fence)
-          又称换位密码。没有改变明文字母，只改变了字母的出现顺序。
-      
-  
-
-
-
-
-
-
-
-传统密码 (Traditional Cipher)
-├── 代换密码 (Substitution) - [字符被替换]
-│   ├── 单表代换 (Monoalphabetic)
-│   │   ├── 棋盘密码
-│   │   ├── 移位密码 (含凯撒密码)
-│   │   └── 替换密码
-│   ├── 多表代换 (Polyalphabetic)
-│   │   └── Vigenère 密码
-│   └── 多字母代换 (Polygraphic)
-│       └── Hill 密码
-│
-└── 置换密码 (Permutation) - [顺序被改变]
-├── 滚筒密码 (Scytale)
-└── 栅栏技术 (Rail-fence)">
+不要死磕语法细节，核心是理解逻辑。">
     <meta name="generator" content="Hugo 0.158.0">
     
     
@@ -172,7 +132,7 @@
     
 
     
-      <link rel="canonical" href="http://localhost:49974/myblog/posts/%E7%BD%91%E7%BB%9C%E7%A9%BA%E9%97%B4%E5%AE%89%E5%85%A8%E6%A6%82%E8%AE%BA/">
+      <link rel="canonical" href="http://localhost:49974/myblog/posts/python2/">
     
 
     
@@ -708,205 +668,148 @@
         <h1 style="color: #00ffff; font-size: clamp(2em, 5vw, 2.5em); margin: 0 0 20px; text-shadow: 0 0 10px rgba(0,255,255,0.3); animation: fadeIn 0.8s ease;"></h1>
         
         <div style="color: #ccc; margin: 20px 0; display: flex; gap: 20px; flex-wrap: wrap; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1);">
-          <span>📅 2023-03-30</span>
+          <span>📅 0001-01-01</span>
           
-          <span>✏️ 2026-03-30</span>
-          
-          <span>📝 176 字</span>
-          <span>⏱️ 1 分钟</span>
+          <span>📝 230 字</span>
+          <span>⏱️ 2 分钟</span>
         </div>
         
         
         
-<div style="margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px;">
-  
-  
-    
-    
-    <a href="/myblog/tags/%E7%AC%94%E8%AE%B0" 
-       style="
-         display: inline-flex;
-         align-items: center;
-         padding: 6px 14px;
-         background: #00ffff;
-         border-radius: 18px;
-         color: #000;
-         font-size: 0.85em;
-         font-weight: 500;
-         text-decoration: none;
-         transition: all 0.2s ease;
-         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-       "
-       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.3)'"
-       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0, 0, 0, 0.2)'">
-      笔记
-    </a>
-  
-</div>
-
 
         
         <div class="article-content" style="color: #fff; line-height: 1.8; margin-top: 30px;">
-          <h1 id="网络空间安全概述">网络空间安全概述</h1>
-<ul>
-<li>网络空间安全概念演变</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-plain" data-lang="plain"><span class="line"><span class="cl">  阶段1: 通信保密 ──→ 阶段2: 计算机安全 ──→ 阶段3: 信息系统安全 ──→ 阶段4: 网络空间安全
-</span></span><span class="line"><span class="cl">(古典密码)          (1970s COMPUSEC)     (1990s INFOSEC)     (21世纪 第五大空间)
-</span></span><span class="line"><span class="cl">    │                   │                        │                       │
-</span></span><span class="line"><span class="cl">    ▼                   ▼                        ▼                       ▼
-</span></span><span class="line"><span class="cl">  数据加密            DES/TCSEC                互联网安全            全方位国家安全
-</span></span></code></pre></div><ul>
-<li>网络空间安全基本属性
-<ul>
-<li>
-<table>
-  <thead>
-      <tr>
-          <th>攻击形式</th>
-          <th>对应安全属性</th>
-          <th>说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>偷看/窃听</td>
-          <td><strong>机密性(C)</strong></td>
-          <td>防止信息泄露</td>
-      </tr>
-      <tr>
-          <td>篡改/删节</td>
-          <td><strong>完整性(I)</strong></td>
-          <td>防止数据被修改</td>
-      </tr>
-      <tr>
-          <td>拦截/中断</td>
-          <td><strong>可用性(A)</strong></td>
-          <td>确保系统正常运行</td>
-      </tr>
-      <tr>
-          <td>重放攻击</td>
-          <td><strong>真实性</strong></td>
-          <td>防止信息被重复利用</td>
-      </tr>
-      <tr>
-          <td>伪装/冒充</td>
-          <td><strong>实体真实性</strong></td>
-          <td>身份鉴别</td>
-      </tr>
-      <tr>
-          <td>否认发送</td>
-          <td><strong>不可否认性</strong></td>
-          <td>防止抵赖行为</td>
-      </tr>
-  </tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>安全服务与安全机制（ISO 7498-2)
-<ul>
-<li>
-<table>
-  <thead>
-      <tr>
-          <th>安全服务</th>
-          <th>核心功能</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>鉴别</strong></td>
-          <td>对等实体鉴别、数据原发鉴别</td>
-      </tr>
-      <tr>
-          <td><strong>访问控制</strong></td>
-          <td>控制实体对资源的访问权限</td>
-      </tr>
-      <tr>
-          <td><strong>数据完整性</strong></td>
-          <td>防止信息遭受篡改等破坏</td>
-      </tr>
-      <tr>
-          <td><strong>数据保密性</strong></td>
-          <td>使数据不被非授权泄露</td>
-      </tr>
-      <tr>
-          <td><strong>抗抵赖/不可否认</strong></td>
-          <td>原发抗抵赖、接收抗抵赖</td>
-      </tr>
-  </tbody>
-</table>
-</li>
-</ul>
-</li>
-</ul>
+          <p>了解了，既然考试就在下午，时间非常紧张，我马上帮你整理一个<strong>最简明、直接可用的复习资料</strong>，这份资料重点是<strong>能直接应用</strong>，帮你同学在考试中拿到基本分数。</p>
+<p>这里是<strong>重点回顾 + 必背模板</strong>，你只需要<strong>快速过一遍，确保能写出来</strong>，就可以应付大部分题目了。</p>
 <hr>
-<h1 id="传统密码">传统密码</h1>
+<h1 id="-最后复习python考试速战速决版-">⚡️ 最后复习：Python考试速战速决版 ⚡️</h1>
+<h2 id="一基本概念与写法必背">一、<strong>基本概念与写法</strong>（必背）</h2>
+<h3 id="1-输出和输入">1️⃣ <strong>输出和输入</strong></h3>
 <ul>
-<li>什么是密码学
-<ul>
-<li>密码学是研究密码系统或通信安全的一门学科，分为密码编码学和密码分析学</li>
-<li><strong>密码编码学</strong>：研究如何对信息编码以实现信息和通信安全</li>
-<li><strong>密码分析学/密码破译学</strong>：研究如何破译或攻击受保护信息</li>
-</ul>
+<li>
+<p>输出：<code>print(&quot;内容&quot;)</code></p>
 </li>
 <li>
-<h2 id="传统密码-1">传统密码</h2>
+<p>输入：<code>变量 = input(&quot;提示信息&quot;)</code></p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;请输入数字：&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">num</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;你输入的是：&#34;</span><span class="p">,</span> <span class="n">num</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="2-变量">2️⃣ <strong>变量</strong></h3>
+<p>变量是存储数据的地方：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># 变量a存储5</span>
+</span></span></code></pre></div><hr>
+<h2 id="二条件判断if语句常见题">二、<strong>条件判断（if语句）</strong>（常见题）</h2>
+<h3 id="基本结构"><strong>基本结构</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">条件</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">执行的代码</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">另一种情况执行的代码</span>
+</span></span></code></pre></div><h3 id="示例判断成绩"><strong>示例：判断成绩</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&#34;请输入成绩：&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;及格&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;不及格&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><hr>
+<h2 id="三循环for语句必考简单">三、<strong>循环（for语句）</strong>（必考，简单）</h2>
+<h3 id="基本结构-1"><strong>基本结构：</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">变量</span> <span class="ow">in</span> <span class="n">范围</span><span class="err">：</span>
+</span></span><span class="line"><span class="cl">    <span class="n">执行的代码</span>
+</span></span></code></pre></div><h3 id="例子打印数字"><strong>例子：打印数字</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>  <span class="c1"># 打印 0, 1, 2, 3, 4</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span></code></pre></div><hr>
+<h2 id="四列表操作常考">四、<strong>列表操作（常考）</strong></h2>
+<h3 id="列表存储一堆数据"><strong>列表</strong>存储一堆数据：</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+</span></span></code></pre></div><h3 id="常用操作"><strong>常用操作：</strong></h3>
 <ul>
-<li>主要特点：数据的安全基于算法的保密</li>
 <li>
-<table>
-  <thead>
-      <tr>
-          <th style="text-align: left">分类层级</th>
-          <th style="text-align: left">名称</th>
-          <th style="text-align: left">包含的具体算法/子类</th>
-          <th style="text-align: left">文档说明</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">一级分类</td>
-          <td style="text-align: left">传统密码</td>
-          <td style="text-align: left">1. 代换密码  <br>2. 置换密码</td>
-          <td style="text-align: left">传统密码主要分为这两大类。</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">二级分类</td>
-          <td style="text-align: left">代换密码  <br>(Substitution)</td>
-          <td style="text-align: left">单表代换：  <br>• 棋盘密码  <br>• 凯撒密码 (Caesar)  <br>• 移位密码  <br>• 替换密码 (Simple Substitution)  <br>  <br>多表代换：  <br>• Vigenère (维吉尼亚) 密码  <br>  <br>多字母代换：  <br>• Hill (希尔) 密码</td>
-          <td style="text-align: left">明文中的字符被替换成密文中的另一个字符。</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">二级分类</td>
-          <td style="text-align: left">置换密码  <br>(Permutation)</td>
-          <td style="text-align: left">• 滚筒密码 (Scytale)  <br>• 栅栏技术 (Rail-fence)</td>
-          <td style="text-align: left">又称换位密码。没有改变明文字母，只改变了字母的出现顺序。</td>
-      </tr>
-  </tbody>
-</table>
-</li>
-</ul>
+<p>求和：<code>sum(areas)</code></p>
 </li>
 <li>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"></code></pre></div></li>
+<p>最大值：<code>max(areas)</code></p>
+</li>
+<li>
+<p>个数：<code>len(areas)</code></p>
+</li>
 </ul>
-<p>传统密码 (Traditional Cipher)
-├── 代换密码 (Substitution) - [字符被替换]
-│   ├── 单表代换 (Monoalphabetic)
-│   │   ├── 棋盘密码
-│   │   ├── 移位密码 (含凯撒密码)
-│   │   └── 替换密码
-│   ├── 多表代换 (Polyalphabetic)
-│   │   └── Vigenère 密码
-│   └── 多字母代换 (Polygraphic)
-│       └── Hill 密码
-│
-└── 置换密码 (Permutation) - [顺序被改变]
-├── 滚筒密码 (Scytale)
-└── 栅栏技术 (Rail-fence)</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></div>
+<h3 id="例子求平均值"><strong>例子：求平均值</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">avg</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;平均值：&#34;</span><span class="p">,</span> <span class="n">avg</span><span class="p">)</span>
+</span></span></code></pre></div><hr>
+<h2 id="五条件筛选最常考">五、<strong>条件筛选（最常考）</strong></h2>
+<h3 id="筛选列表中的数据"><strong>筛选列表中的数据：</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">areas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># 输出大于150的值</span>
+</span></span></code></pre></div><hr>
+<h2 id="六字典数据存储有时候考">六、<strong>字典（数据存储）</strong>（有时候考）</h2>
+<h3 id="字典存储键值对"><strong>字典</strong>存储“键：值”对：</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">land</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&#34;A地块&#34;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="s2">&#34;B地块&#34;</span><span class="p">:</span> <span class="mi">200</span><span class="p">}</span>
+</span></span></code></pre></div><h3 id="获取值"><strong>获取值：</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="s2">&#34;A地块&#34;</span><span class="p">])</span>  <span class="c1"># 输出 100</span>
+</span></span></code></pre></div><hr>
+<h2 id="七文件读取如果涉及基本这么写">七、<strong>文件读取</strong>（如果涉及，基本这么写）</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;data.txt&#34;</span><span class="p">,</span> <span class="s2">&#34;r&#34;</span><span class="p">)</span>  <span class="c1"># 打开文件</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>  <span class="c1"># 输出每一行</span>
+</span></span><span class="line"><span class="cl"><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="c1"># 关闭文件</span>
+</span></span></code></pre></div><hr>
+<h2 id="八考试常见题型直接套用">八、<strong>考试常见题型（直接套用）</strong></h2>
+<h3 id="1-计算平均值"><strong>1. 计算平均值</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">avg</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;平均值：&#34;</span><span class="p">,</span> <span class="n">avg</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="2-计算最大值"><strong>2. 计算最大值</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">areas</span><span class="p">))</span>  <span class="c1"># 输出最大值</span>
+</span></span></code></pre></div><h3 id="3-筛选大于某个值的数据"><strong>3. 筛选大于某个值的数据</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">areas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>  <span class="c1"># 输出大于150的地块</span>
+</span></span></code></pre></div><h3 id="4-条件统计数量"><strong>4. 条件统计数量</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">areas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>  <span class="c1"># 输出大于150的地块数量</span>
+</span></span></code></pre></div><hr>
+<h2 id="九必背模板考试中用">九、<strong>必背模板（考试中用）</strong></h2>
+<h3 id="全能模板"><strong>全能模板：</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">areas</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 计算总和和平均值</span>
+</span></span><span class="line"><span class="cl"><span class="n">total</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">avg</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">areas</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 输出大于平均值的地块</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">areas</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">avg</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 输出平均值</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;平均值：&#34;</span><span class="p">,</span> <span class="n">avg</span><span class="p">)</span>
+</span></span></code></pre></div><hr>
+<h2 id="十小贴士临时救命">十、<strong>小贴士（临时救命）</strong></h2>
+<ol>
+<li>
+<p><strong>不要死磕语法细节</strong>，<strong>核心是理解逻辑</strong>。</p>
+</li>
+<li>
+<p><strong>缩进很重要</strong>，每次写 <code>if</code>、<code>for</code> 后面都要缩进，<strong>不要出错</strong>。</p>
+</li>
+<li>
+<p>如果看到不懂的题目，可以先考虑：<strong>“能不能写一个循环？”</strong>，<strong>“能不能判断大于/小于某个数？”</strong></p>
+</li>
+</ol>
+<hr>
+<p><strong>加油！</strong> 现在只需要快速过一遍这些代码，并且在脑海里想一遍每个部分怎么写，你就能在考试中灵活应对了。如果有多余的时间，做几道练习题强化记忆。</p>
+<p>如果你有题目不明白的，赶紧问我，我可以帮你解答！</p>
+
         </div>
         
         
@@ -915,33 +818,12 @@
   
   <div>
     
-    <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-      <span style="color: #888; font-size: 0.9em;">标签：</span>
-      
-        <a href="http://localhost:49974/tags/%E7%AC%94%E8%AE%B0" 
-           style="
-             padding: 6px 14px;
-             background: rgba(0, 255, 255, 0.15);
-             border: 1px solid rgba(0, 255, 255, 0.4);
-             border-radius: 20px;
-             color: #00ffff;
-             font-size: 0.9em;
-             text-decoration: none;
-             transition: all 0.3s ease;
-           "
-           onmouseover="this.style.background='rgba(0, 255, 255, 0.3)'; this.style.transform='translateY(-2px)'"
-           onmouseout="this.style.background='rgba(0, 255, 255, 0.15)'; this.style.transform='translateY(0)'">
-          笔记
-        </a>
-      
-    </div>
-    
   </div>
   
   
   <div style="display: flex; gap: 10px;">
     <span style="color: #888; font-size: 0.9em;">分享：</span>
-    <a href="https://twitter.com/intent/tweet?text=&url=http%3a%2f%2flocalhost%3a49974%2fmyblog%2fposts%2f%25E7%25BD%2591%25E7%25BB%259C%25E7%25A9%25BA%25E9%2597%25B4%25E5%25AE%2589%25E5%2585%25A8%25E6%25A6%2582%25E8%25AE%25BA%2f" 
+    <a href="https://twitter.com/intent/tweet?text=&url=http%3a%2f%2flocalhost%3a49974%2fmyblog%2fposts%2fpython2%2f" 
        target="_blank"
        style="
          padding: 6px 12px;
@@ -954,7 +836,7 @@
        "
        onmouseover="this.style.opacity='0.8'"
        onmouseout="this.style.opacity='1'">Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a49974%2fmyblog%2fposts%2f%25E7%25BD%2591%25E7%25BB%259C%25E7%25A9%25BA%25E9%2597%25B4%25E5%25AE%2589%25E5%2585%25A8%25E6%25A6%2582%25E8%25AE%25BA%2f" 
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a49974%2fmyblog%2fposts%2fpython2%2f" 
        target="_blank"
        style="
          padding: 6px 12px;
@@ -975,7 +857,7 @@
 <div style="margin-top: 30px; padding-top: 30px; border-top: 1px solid #333;">
   <div style="display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
     
-    <a href="/myblog/posts/kali-linux/" 
+    <a href="/myblog/posts/%E4%BB%8Echatgpt%E5%88%B0ai-agent/" 
        style="
          flex: 1;
          min-width: 200px;
@@ -995,7 +877,7 @@
     
     
     
-    <a href="/myblog/posts/java%E5%AD%A6%E4%B9%A0/%E9%A2%98%E7%9B%AE/" 
+    <a href="/myblog/posts/kali-linux/" 
        style="
          flex: 1;
          min-width: 200px;
@@ -1011,7 +893,7 @@
        onmouseover="this.style.borderColor='#00ffff'; this.style.background='rgba(0,255,255,0.1)'"
        onmouseout="this.style.borderColor='#333'; this.style.background='rgba(0,0,0,0.5)'">
       <div style="font-size: 0.8em; color: #888; margin-bottom: 5px;">下一篇 →</div>
-      <div style="font-weight: bold; color: #00ffff;">Java题目记录</div>
+      <div style="font-weight: bold; color: #00ffff;"></div>
     </a>
     
   </div>
@@ -1106,10 +988,59 @@
     
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#网络空间安全概述">网络空间安全概述</a></li>
-    <li><a href="#传统密码">传统密码</a>
+    <li><a href="#-最后复习python考试速战速决版-">⚡️ 最后复习：Python考试速战速决版 ⚡️</a>
       <ul>
-        <li><a href="#传统密码-1">传统密码</a></li>
+        <li><a href="#一基本概念与写法必背">一、<strong>基本概念与写法</strong>（必背）</a>
+          <ul>
+            <li><a href="#1-输出和输入">1️⃣ <strong>输出和输入</strong></a></li>
+            <li><a href="#2-变量">2️⃣ <strong>变量</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#二条件判断if语句常见题">二、<strong>条件判断（if语句）</strong>（常见题）</a>
+          <ul>
+            <li><a href="#基本结构"><strong>基本结构</strong></a></li>
+            <li><a href="#示例判断成绩"><strong>示例：判断成绩</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#三循环for语句必考简单">三、<strong>循环（for语句）</strong>（必考，简单）</a>
+          <ul>
+            <li><a href="#基本结构-1"><strong>基本结构：</strong></a></li>
+            <li><a href="#例子打印数字"><strong>例子：打印数字</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#四列表操作常考">四、<strong>列表操作（常考）</strong></a>
+          <ul>
+            <li><a href="#列表存储一堆数据"><strong>列表</strong>存储一堆数据：</a></li>
+            <li><a href="#常用操作"><strong>常用操作：</strong></a></li>
+            <li><a href="#例子求平均值"><strong>例子：求平均值</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#五条件筛选最常考">五、<strong>条件筛选（最常考）</strong></a>
+          <ul>
+            <li><a href="#筛选列表中的数据"><strong>筛选列表中的数据：</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#六字典数据存储有时候考">六、<strong>字典（数据存储）</strong>（有时候考）</a>
+          <ul>
+            <li><a href="#字典存储键值对"><strong>字典</strong>存储“键：值”对：</a></li>
+            <li><a href="#获取值"><strong>获取值：</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#七文件读取如果涉及基本这么写">七、<strong>文件读取</strong>（如果涉及，基本这么写）</a></li>
+        <li><a href="#八考试常见题型直接套用">八、<strong>考试常见题型（直接套用）</strong></a>
+          <ul>
+            <li><a href="#1-计算平均值"><strong>1. 计算平均值</strong></a></li>
+            <li><a href="#2-计算最大值"><strong>2. 计算最大值</strong></a></li>
+            <li><a href="#3-筛选大于某个值的数据"><strong>3. 筛选大于某个值的数据</strong></a></li>
+            <li><a href="#4-条件统计数量"><strong>4. 条件统计数量</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#九必背模板考试中用">九、<strong>必背模板（考试中用）</strong></a>
+          <ul>
+            <li><a href="#全能模板"><strong>全能模板：</strong></a></li>
+          </ul>
+        </li>
+        <li><a href="#十小贴士临时救命">十、<strong>小贴士（临时救命）</strong></a></li>
       </ul>
     </li>
   </ul>
